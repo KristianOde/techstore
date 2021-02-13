@@ -1,0 +1,43 @@
+.TopHeader {
+    display: block;
+    width: 100%;
+    background-color: #333;
+    color: white;
+}
+
+/* Decorating the list of links in the header */
+.HeaderLinkList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.HeaderLinkList > li {
+    float: left;
+}
+
+.HeaderLinkList > li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.HeaderLinkList > li:hover {
+    background-color: #111;
+}
+
+.HeaderLinkList > li:last-child {
+    float: right;
+}
+
+.HeaderLinkList > li:last-child:hover {
+    background-color: red;
+}
+
+/* .HeaderLinkList > li a:hover:not(.active) {
+    background-color: #111;
+} */
