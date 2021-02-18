@@ -10,7 +10,7 @@ const list = [
     {"to":"test3", "name":"Tilbud"},
     {"to":"test4", "name":"Min Side"},
     {"to":"test5", "name":"Kontakt oss"},
-    {"to":"/", "name":"Logg inn"}
+    {"to":"login", "name":"Logg inn"}
 ]
 
 // Oppretter en context
@@ -23,7 +23,7 @@ export const useHeaderLinks = () => useContext(ListContext)
 export function HeaderLinksProvider ({ children }) {
     const [listelements, setListelements] = useState(list)
     return(
-        <ListContext.Provider value={{ listelements, setListelements }}>
+        <ListContext.Provider value={{ listelements, setListelements,}}>
             {children}
         </ListContext.Provider>
     )
