@@ -2,7 +2,6 @@
  * Meningsløs custom hook og context provider, inkludert for
  * repetisjon og demonstrasjon
  */
-
 import React, { createContext, useState, useContext } from 'react'
 
 const list = [

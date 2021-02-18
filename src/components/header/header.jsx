@@ -4,9 +4,9 @@ import '../../styles/mainheader.css'
 
 const Header = () => {
     return(
-        <HeaderLinksProvider>
+        <HeaderLinksProvider> {/* context provider; all children elements are consumers*/}
             <header className="TopHeader">
-                <span>TECH WEB STORE</span>
+                <div className="HeaderLogo">TECH WEB</div>
                 <Linklist />
             </header>
         </HeaderLinksProvider>

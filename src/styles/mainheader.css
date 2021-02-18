@@ -1,6 +1,8 @@
 .TopHeader {
-    display: block;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    width: calc(100%);
+    height: 50px;
     background-color: #333;
     color: white;
 }
@@ -12,6 +14,7 @@
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    width: 80%;
 }
 
 .HeaderLinkList > li {
@@ -36,6 +39,12 @@
 
 .HeaderLinkList > li:last-child:hover {
     background-color: red;
+}
+
+.HeaderLogo {
+    font-weight: bold;
+    font-size: 1.5em;
+    width: 20%;
 }
 
 /* .HeaderLinkList > li a:hover:not(.active) {
