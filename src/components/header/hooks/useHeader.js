@@ -5,7 +5,12 @@
 import React, { createContext, useState, useContext } from 'react'
 
 const list = [
-    "Hjem", "Kategorier", "Tilbud", "Min side", "Kontakt oss", "Logg ut"
+    {"to":"test1", "name":"Hjem"},
+    {"to":"test2", "name":"Kategorier"},
+    {"to":"test3", "name":"Tilbud"},
+    {"to":"test4", "name":"Min Side"},
+    {"to":"test5", "name":"Kontakt oss"},
+    {"to":"/", "name":"Logg inn"}
 ]
 
 // Oppretter en context

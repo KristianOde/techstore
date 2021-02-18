@@ -1,6 +1,8 @@
-const HLink = ({name}) => {
+import { Link } from "react-router-dom";
+
+const HLink = ({to, name}) => {
     return(
-        <li><a href="null">{name}</a></li>
+        <li><Link to={to}>{name}</Link></li>
     )
 } 
 

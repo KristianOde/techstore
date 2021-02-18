@@ -13,7 +13,6 @@
   display: flex;
   flex-flow: column wrap;
   padding: 10px;
-  color: white;
   border: 5px solid red;
   align-content: center;
 }

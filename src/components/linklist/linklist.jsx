@@ -6,7 +6,7 @@ const Linklist = () => {
     return(
         <ul className="HeaderLinkList">
             {listelements.map((item, i) => (
-                <HLink key={i} name={item} />
+                <HLink key={i} to={item.to} name={item.name} />
             ))}
         </ul>
     )
