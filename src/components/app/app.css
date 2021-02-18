@@ -1,12 +1,25 @@
 .App {
+  display: flex;
+  flex-flow: column wrap;
+  overflow: auto;
   text-align: center;
   background-color: white;
   min-height: 100vh;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  align-content: center;
 }
 
 .MainView {
-  margin: 10px;
+  display: flex;
+  flex-flow: column wrap;
+  padding: 10px;
   color: white;
-  background-color: red;
+  border: 5px solid red;
+  align-content: center;
+}
+
+.TestBorder {
+  height: 100px;
+  padding: 10px;
+  border: 5px solid blue;
 }

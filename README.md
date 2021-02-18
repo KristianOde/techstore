@@ -16,7 +16,7 @@ Når en komponent trenger å ta vare på og endre verdier, må det brukes state.
 
 ### React Context
 Context brukes for å dele data/verdier mellom flere komponenter. Det gjøres ved at du oppretter en "provider", og definerer "consumers" for denne.
-```html
+```reactjs
 <App>
     <Header />
     <Main>
@@ -39,3 +39,9 @@ Context kan inneholde hooks, funksjoner, metoder, variabler osv
 * https://kentcdodds.com/blog/how-to-use-react-context-effectively
 
 (Legg gjerne til mer)
+
+### Annet
+
+#### Misc ressurser
+* [Application state management with react](https://kentcdodds.com/blog/application-state-management-with-react)
+* [Using Composition in React to Avoid "Prop Drilling"](https://www.youtube.com/watch?v=3XaXKiXtNjw)(Youtube)
