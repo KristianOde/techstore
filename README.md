@@ -32,6 +32,8 @@ I eksempelet over er `CurrentOffersProvider` en Context Provider. Alle dens "bar
 
 Context kan inneholde hooks, funksjoner, metoder, variabler osv
 
+!!!*Context er bare nødvendig om du vet at flere komponenter vil få bruk for de samme dataene og funksjonene. Ofte er det nok med å bare ha en lokal state i komponenten*!!!
+
 #### Nyttige ressurser om context
 * https://reactjs.org/docs/context.html
 * https://kentcdodds.com/blog/how-to-use-react-context-effectively
