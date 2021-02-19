@@ -2,7 +2,7 @@ import "firebase/auth"
 import firebase from "firebase/app"
 
 const app = firebase.initializeApp({
-    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    apiKey: "AIzaSyCX7KL9Zf8UP0XWK01gwRnyhPuLOq_UONs",
     authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
     databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
     projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
