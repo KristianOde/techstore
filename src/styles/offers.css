@@ -1,0 +1,21 @@
+.OffersView {
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.OfferBox {
+    margin: 10px;
+    width: calc(25% - 22px);
+    height: 0;
+    padding-bottom: 25%;
+    border: 1px solid gainsboro;
+}
+
+.OfferBox > img {
+    width: 95%;
+    margin: 5px auto;
+    height: auto;
+    border: 1px solid gainsboro;
+}
