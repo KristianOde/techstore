@@ -8,9 +8,16 @@ const Header = () => {
     return(
         <HeaderLinksProvider> {/* context provider; all children elements are consumers*/}
             <header className="TopHeader">
-                <div className="HeaderLogo">TECH WEB</div>
-                <Linklist />
-            
+                <div className="UpperHeaderSection">
+                    <div className="HeaderLogo">TECH WEB</div>
+                    <div className="SearchBarHolder">
+                        <input className="Searchbar" type="text" placeholder="Søk her"/>
+                    </div>
+                    <div className="HeaderPlaceholder"></div>
+                </div>
+                <div className="LowerHeaderSection">
+                    <Linklist />
+                </div>            
             </header>
         </HeaderLinksProvider>
     )

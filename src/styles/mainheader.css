@@ -1,10 +1,53 @@
 .TopHeader {
     display: flex;
+    flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 50px;
+    height: 100px;
     background-color: #333;
     color: white;
+}
+
+/* The header elements in the top half */
+.UpperHeaderSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+}
+
+.HeaderLogo {
+    font-weight: bold;
+    font-size: 1.5em;
+    letter-spacing: 0.23em;
+    width: 20%;
+}
+
+.SearchBarHolder {
+    width: 60%;
+    justify-content: center;
+}
+
+.Searchbar {
+    width: 60%;
+    height: 27px;
+    font-size: 1.2em;
+    text-indent: 2%;
+}
+
+.HeaderPlaceHolder {
+    width: 20%;
+}
+
+/* The header elements in the lower half */
+.LowerHeaderSection {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 40%;
+    align-items: center;
 }
 
 /* Decorating the list of links in the header */
@@ -14,7 +57,7 @@
     padding: 0;
     overflow: hidden;
     background-color: #333;
-    width: 80%;
+    width: 100%;
 }
 
 .HeaderLinkList > li {
@@ -25,7 +68,7 @@
     display: block;
     color: white;
     text-align: center;
-    padding: 15px 16px;
+    padding: 15px 20px;
     text-decoration: none;
 }
 
@@ -39,12 +82,6 @@
 
 .HeaderLinkList > li:last-child:hover {
     background-color: red;
-}
-
-.HeaderLogo {
-    font-weight: bold;
-    font-size: 1.5em;
-    width: 20%;
 }
 
 /* .HeaderLinkList > li a:hover:not(.active) {
