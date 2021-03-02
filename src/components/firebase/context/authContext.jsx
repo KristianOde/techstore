@@ -15,6 +15,10 @@ export function AuthProvider ({ children }) {
         return auth.signInWithEmailAndPassword(epost, passord)
     }
 
+    function registrerBrukerFirebase(epost, passord, brukernavn) {
+        return auth.createUserWithEmailAndPassword(epost, passord)
+    }
+
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
             setCurrentUser(user)

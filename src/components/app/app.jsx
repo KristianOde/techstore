@@ -11,6 +11,7 @@ import LoginForm from '../logginn/logginn';
 import './app.css'
 import { AuthProvider } from '../firebase/context/authContext';
 import Navigation from '../navigation/navigation';
+import Registrer from '../registrer/registrer';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/test4" element={<Test4 />} />
           <Route path="/test5" element={<Test5 />} />
           <Route path="/login" element={<LoginForm />} />
+          <Route path="/registrer" element={<Registrer />} />
         </Routes>
       </div>
     </div>
