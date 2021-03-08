@@ -9,7 +9,7 @@ const list = [
     {"to":"test2", "name":"Kategorier"},
     {"to":"test3", "name":"Tilbud"},
     {"to":"test4", "name":"Min Side"},
-    {"to":"test5", "name":"Kontakt oss"},
+    {"to":"test5", "name":"Kundeservice"},
     {"to":"login", "name":"Logg inn"}
 ]
 

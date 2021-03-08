@@ -32,9 +32,11 @@
 
 .Searchbar {
     width: 60%;
-    height: 27px;
+    height: 35px;
     font-size: 1.2em;
     text-indent: 2%;
+    border-radius: 2px;
+    border: none;
 }
 
 .HeaderPlaceHolder {

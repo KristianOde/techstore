@@ -6,16 +6,55 @@
 }
 
 .OfferBox {
+    display: flex;
+    flex-direction: column;
     margin: 10px;
     width: calc(25% - 22px);
-    height: 0;
-    padding-bottom: 25%;
+    max-height: 300px;
     border: 1px solid gainsboro;
 }
 
-.OfferBox > img {
-    width: 95%;
-    margin: 5px auto;
+.ProductImageThumbnail > img {
+    width: 100%;
     height: auto;
+}
+
+.ProductImageThumbnail {
+    margin: 5px auto;
+    position: relative;
+    width: 95%;
+    height: 65%;
     border: 1px solid gainsboro;
 }
+
+.ProductInformation {
+    position: relative;
+    margin: 0 auto;
+    width: 95%;
+    height: 27%;
+    text-align: left;
+}
+
+.ProductInformation > button {
+    display: block;
+    position: absolute;
+    right: 0px;
+    bottom: 0%;
+    background-color: darkcyan;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.2em;
+    color: white;
+    cursor:pointer;
+}
+
+.OfferPercentageTag {
+    position: absolute;
+    background-color: red;
+    color: white;
+    right: 0px;
+    bottom: 10%;
+    text-align: center;
+    width: 25%;
+}
+
