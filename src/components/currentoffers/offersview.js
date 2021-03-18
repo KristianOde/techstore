@@ -1,14 +1,17 @@
 import Offer from "../offer/offer"
+import useRawgApi from "../app/hooks/useRawgApi"
 
 const Offers = () => {
+    const [games] = useRawgApi()
 
     const createOffers = () => {
-        let offers = []
-
-        for (let i = 0; i < 21; i++) {
-            offers.push(<Offer key={i}/>)
-        }
-        return offers
+        return games.map((item, i) => (
+            <Offer key={i}
+                productName={item.name}
+                image={item.background_image}
+                productInfo={item.released}
+            />
+        ))
     }
 
     return(

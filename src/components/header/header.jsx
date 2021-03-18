@@ -17,7 +17,7 @@ const Header = () => {
                 </div>
                 <div className="LowerHeaderSection">
                     <Linklist />
-                </div>            
+                </div>
             </header>
         </HeaderLinksProvider>
     )
