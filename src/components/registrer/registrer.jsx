@@ -7,15 +7,16 @@ import "../../styles/form.css";
 const Registrer = () => {
   const { register, handleSubmit, errors } = useForm();
   const [loading, setLoading] = useState(false);
-  const { loggInnFirebase } = useAuth();
+  const { registrerBrukerFirebase, registrerBrukerFirestore } = useAuth();
   const navigate = useNavigate();
 
   async function onSubmit(e) {
-    let result = await loggInnFirebase(e.brukernavn, e.passord);
-    if (result.error) {
+    let result = await registrerBrukerFirebase(e.epost, e.passord);
+    let result2 = await registrerBrukerFirestore(e.epost, e.brukernavn, e.passord);
+    if (result.error && result2.error) {
       console.log("sadsadsad");
     } else {
-      navigate("profil");
+      navigate("/profil");
     }
   }
 
@@ -24,21 +25,21 @@ const Registrer = () => {
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <h1>Lag bruker</h1>
 
-        <label htmlFor="username">Epost</label>
+        <label htmlFor="epost">Epost</label>
         <input
           className="forminput"
-          name="brukernavn"
-          id="brukernavnId"
+          name="epost"
+          id="epostId"
           ref={register({ required: true, minLength: 5 })}
         />
-        {errors.brukernavn && errors.brukernavn.type === "required" && (
+        {errors.epost && errors.epost.type === "required" && (
           <p className="formerror">Required</p>
         )}
-        {errors.brukernavn && errors.brukernavn.type === "minLength" && (
+        {errors.epost && errors.epost.type === "minLength" && (
           <p className="formerror">Minimum required length is 5 letters</p>
         )}
 
-        <label htmlFor="username">brukernavn</label>
+        <label htmlFor="username">Brukernavn</label>
         <input
           className="forminput"
           name="brukernavn"
@@ -57,6 +58,7 @@ const Registrer = () => {
           className="forminput"
           name="passord"
           id="passordID"
+          type="password"
           ref={register({ required: true })}
         />
         {errors.passord && errors.passord.type === "required" && (
@@ -64,7 +66,7 @@ const Registrer = () => {
         )}
 
         <input disabled={loading} type="submit" className="formknapp" />
-        <p class="message">
+        <p className="message">
           Har allerede en bruker? <Link to="/login">Logg inn</Link>
         </p>
       </form>
