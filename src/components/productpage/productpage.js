@@ -4,6 +4,8 @@ import useRawgApi from "../app/hooks/useRawgApi"
 import placeholderProduct from "../../json/placeholderProduct"
 import ProductBox from "./productbox"
 
+import "./productview.css"
+
 
 const ProductPage = () => {
     const { productId } = useParams()
@@ -16,6 +18,7 @@ const ProductPage = () => {
     return (
         <div className="ProductPage">
             <ProductBox product={product}/>
+            <h1>test</h1>
         </div>
     )
 }

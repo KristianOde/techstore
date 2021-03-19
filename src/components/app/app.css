@@ -1,7 +1,6 @@
 .App {
   display: flex;
   flex-flow: column wrap;
-  overflow: auto;
   text-align: center;
   background-color: white;
   min-height: 100vh;
@@ -11,9 +10,9 @@
 
 .MainView {
   display: flex;
-  flex-flow: column wrap;
-  padding: 5px;
-  border: 0px solid red;
+  min-height: 100%;
+  flex-direction: column;
+  flex: 1;
   align-content: center;
 }
 
@@ -31,4 +30,12 @@
   text-align: left;
   text-indent: 15px;
   line-height: 30px;
+}
+
+.Footer {
+  margin-top: auto;
+  height: 50px;
+  width: 100%;
+  line-height: 20px;
+  background-color: lavender;
 }

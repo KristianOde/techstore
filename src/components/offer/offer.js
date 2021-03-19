@@ -31,7 +31,7 @@ const Offer = ({product}) => {
             </div>
             <div className="ProductInformation">
                 <h3>{prod.name}</h3>
-                <h2>{prod.productInfo}</h2>
+                <h4>{prod.productInfo}</h4>
                 <p>
                     <strong>Før:</strong> {price},-  
                     <strong> Nå: </strong> {Math.round(price * 0.6)},-

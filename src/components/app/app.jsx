@@ -15,6 +15,7 @@ import Registrer from '../registrer/registrer';
 import ProductPage from '../productpage/productpage';
 import ProfilSide from '../profilSide/profilSide';
 import ProtectedRoute from '../protectedRoutes/protectedRoute';
+import Footer from '../footer/footer'
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
       <div className="MainView">
         <Navigation />
         <Routes>
-          <Route path="/" element={<Offers />} />
+          <Route exact path="/" element={<Offers />} />
           <Route path="/test2" element={<Test2 />} />
           <Route path="/test3" element={<Test3 />} />
           <Route path="/test4" element={<Test4 />} />
@@ -37,6 +38,7 @@ function App() {
           <ProtectedRoute  isAuth={true} path="/profil" component={ProfilSide}  redirectTo='/login'/>
 
         </Routes>
+        <Footer />
       </div>
     </div>
     </AuthProvider>

@@ -1,0 +1,7 @@
+.ProductPage {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    width: 100%;
+    border: 5px solid red;
+}
