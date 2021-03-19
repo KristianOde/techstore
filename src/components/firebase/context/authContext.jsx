@@ -29,6 +29,10 @@ export function AuthProvider ({ children }) {
           });  
     }
 
+    function loggUt() {
+        return auth.signOut();
+    }
+
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
             setCurrentUser(user)
@@ -40,7 +44,8 @@ export function AuthProvider ({ children }) {
         currentUser,
         loggInnFirebase,
         registrerBrukerFirebase,
-        registrerBrukerFirestore
+        registrerBrukerFirestore,
+        loggUt
     }
 
     return (
