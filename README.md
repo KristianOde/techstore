@@ -1,6 +1,6 @@
 ![logo](https://github.com/KristianUSN/techstore/blob/master/public/TheFlaskehals.png?raw=true)
-# THE FLASKEHALS
-Bachelorprosjekt av Kristian og Mikael
+# [THE FLASKEHALS](https://theflaskehals.herokuapp.com)
+Bachelorprosjekt av Kristian og Mikael. Klikk tittelen for å besøke nettsiden ☝️
 
 ## Beskrivelse
 Nettbutikk som selger datakomponenter, med en funksjon som sier ifra om det er noen flaskehalser/ubalanse i komponentene kunden legger i handlekurven sin. Skrevet i React/JS 💻
