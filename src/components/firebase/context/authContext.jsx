@@ -40,7 +40,7 @@ export function AuthProvider ({ children }) {
         currentUser,
         loggInnFirebase,
         registrerBrukerFirebase,
-        registrerBrukerFirestore,
+        registrerBrukerFirestore
     }
 
     return (

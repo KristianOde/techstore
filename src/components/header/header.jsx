@@ -1,10 +1,8 @@
 import Linklist from "../linklist/linklist"
 import { HeaderLinksProvider } from './hooks/useHeader.js'
 import '../../styles/mainheader.css'
-import { useAuth } from '../firebase/context/authContext'
 
 const Header = () => {
-    const { currentUser } = useAuth()
 
     const logo = process.env.PUBLIC_URL + 'TheFlaskehals.png'
 
