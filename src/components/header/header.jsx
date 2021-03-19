@@ -5,11 +5,16 @@ import { useAuth } from '../firebase/context/authContext'
 
 const Header = () => {
     const { currentUser } = useAuth()
+
+    const logo = process.env.PUBLIC_URL + 'TheFlaskehals.png'
+
     return(
         <HeaderLinksProvider> {/* context provider; all children elements are consumers*/}
             <header className="TopHeader">
                 <div className="UpperHeaderSection">
-                    <div className="HeaderLogo">The Flaskehals</div>
+                    <div className="HeaderLogo">
+                        THE FLASKEHALS
+                    </div>
                     <div className="SearchBarHolder">
                         <input className="Searchbar" type="text" placeholder="Søk her"/>
                     </div>

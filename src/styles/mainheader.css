@@ -25,6 +25,11 @@
     width: 20%;
 }
 
+.HeaderLogo > img {
+    margin: 0 auto;
+    max-width: 50%;
+}
+
 .SearchBarHolder {
     width: 60%;
     justify-content: center;

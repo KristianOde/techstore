@@ -1,24 +1,42 @@
 import '../../styles/offers.css'
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Offer = (props) => {
+const Offer = ({product}) => {
     const [price, setPrice] = useState(856)
     const [offer, setOffer] = useState(40)
+    const navigate = useNavigate()
+
+    /**
+     * !!Testing!!
+     * Deconstructs the object (which is a videogame, for testing purposes)
+     * to better match the names that are to be used
+     */
+    const prod = ({
+        name: product.name,
+        productInfo: product.released,
+        image: product.background_image,
+        id: product.id
+    })
+
+    const navigateToProduct = () => {
+        navigate(`/product/${prod.id}`, {replace: true})
+    }
 
     return(
-        <div className="OfferBox">
+        <div className="OfferBox" onClick={() => navigateToProduct()}>
             <div className="ProductImageThumbnail"> 
-                <img src={props.image} alt="gpu"/>
+                <img src={prod.image} alt="gpu"/>
                 <div className="OfferPercentageTag">-{offer}%</div>
             </div>
             <div className="ProductInformation">
-                <h3>{props.productName}</h3>
-                <h2>{props.productInfo}</h2>
+                <h3>{prod.name}</h3>
+                <h2>{prod.productInfo}</h2>
                 <p>
                     <strong>Før:</strong> {price},-  
                     <strong> Nå: </strong> {Math.round(price * 0.6)},-
                 </p>
-                <button>KJØP</button>
+                <button onClick={() => navigateToProduct()}>KJØP</button>
             </div>
         </div>
     )

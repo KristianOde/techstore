@@ -12,6 +12,7 @@
     width: calc(25% - 22px);
     max-height: 300px;
     border: 1px solid gainsboro;
+    cursor: pointer;
 }
 
 .ProductImageThumbnail > img {
