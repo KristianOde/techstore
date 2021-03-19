@@ -12,6 +12,8 @@ import './app.css'
 import { AuthProvider } from '../firebase/context/authContext';
 import Navigation from '../navigation/navigation';
 import Registrer from '../registrer/registrer';
+import ProfilSide from '../profilSide/profilSide';
+import ProtectedRoute from '../protectedRoutes/protectedRoute';
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
           <Route path="/test5" element={<Test5 />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/registrer" element={<Registrer />} />
+          <ProtectedRoute  isAuth={true} path="/profil" component={ProfilSide}  redirectTo='/login'/>
+
         </Routes>
       </div>
     </div>

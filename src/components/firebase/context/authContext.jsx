@@ -28,7 +28,7 @@ export function AuthProvider ({ children }) {
 
     const value = {
         currentUser,
-        loggInnFirebase
+        loggInnFirebase,
     }
 
     return (
