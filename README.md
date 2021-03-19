@@ -1,4 +1,5 @@
-# Tech Store (temporary name)
+![logo](https://github.com/KristianUSN/techstore/blob/master/public/TheFlaskehals.png?raw=true)
+# THE FLASKEHALS
 Bachelorprosjekt av Kristian og Mikael
 
 ## Beskrivelse
