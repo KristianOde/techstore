@@ -42,6 +42,7 @@ const Logginn = () => {
         <input
           className="forminput"
           name="passord"
+          type="password"
           id="passordID"
           ref={register({ required: true })}
         />
