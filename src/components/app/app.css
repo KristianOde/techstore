@@ -54,3 +54,9 @@
 .big {
   font-size: 2em;
 }
+
+.FloatRight {
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+}

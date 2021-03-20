@@ -28,11 +28,11 @@
 
 .HeaderLogo > img {
     margin: 0 auto;
-    width: 100px;
+    object-fit: contain;
 }
 
 .HeaderLogoImg {
-    max-width: 350px;
+    width: 90%;
 }
 
 .RightUpperHeaderSection {
@@ -52,7 +52,8 @@
 
 .HeaderNavigationLink {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    width: 15%;
 }
 
 .HeaderNavigation > ul > li > a {
@@ -93,14 +94,12 @@
 /* Decorating the list of links in the header */
 .HeaderLinkList {
     list-style-type: none;
+    display: flex;
+    flex-direction: row;
     margin: 0;
     padding: 0;
     overflow: hidden;
     width: 100%;
-}
-
-.HeaderLinkList > li {
-    float: left;
 }
 
 .HeaderLinkList > li a {
@@ -116,11 +115,7 @@
 }
 
 .HeaderLinkList > li:nth-last-child(2) {
-    float: right;
-}
-
-.HeaderLinkList > li:last-child {
-    float: right;
+    margin-right: auto;
 }
 
 .HeaderLinkList > li:last-child:hover {
@@ -130,3 +125,37 @@
 /* .HeaderLinkList > li a:hover:not(.active) {
     background-color: #111;
 } */
+
+@media only screen and (max-width: 600px) {
+    .TopHeader {
+        flex-direction: column;
+        height: auto;
+    }   
+    
+    .RightUpperHeaderSection {
+        width: 100%;
+    }
+    
+    .HeaderNavigation {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .HeaderNavigationLink {
+        width: 100%;
+        display: block;
+        text-align: left;
+    }
+
+    .HeaderNavigationLink > a > img {
+        display: none;
+    }
+
+    .HeaderLinkList {
+        flex-direction: column;
+    }
+
+    .HeaderLogo {
+        display: none;
+    }
+}

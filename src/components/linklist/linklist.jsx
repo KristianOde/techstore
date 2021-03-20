@@ -16,10 +16,6 @@ const Linklist = () => {
 
   return (
     <ul className="HeaderLinkList">
-      {/* {isUserAuthList.map((item, i) => (
-        <HLink key={i} to={item.to} name={item.name} />
-      ))} */}
-
       <HLink to={"/products"} name="Kategorier" image={puburl + "categories.png"}/>
       <HLink to={"/offers"} name="Tilbud" image={puburl + "offers.png"}/>
       <HLink to={"/aboutus"} name="Om oss" image={puburl + "about.png"}/>
