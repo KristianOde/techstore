@@ -115,6 +115,10 @@
     /* background-color: #111; */
 }
 
+.HeaderLinkList > li:nth-last-child(2) {
+    float: right;
+}
+
 .HeaderLinkList > li:last-child {
     float: right;
 }

@@ -11,6 +11,7 @@ export function useAuth() {
 }
 
 export function AuthProvider ({ children }) {
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
     const [currentUser, setCurrentUser] = useState()
     const [loading, setLoading] = useState(true)
 

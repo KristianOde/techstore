@@ -1,11 +1,7 @@
 import HLink from "./link/link";
-import { useHeaderLinks } from "../header/hooks/useHeader";
 import { useAuth } from "../firebase/context/authContext";
 
 const Linklist = () => {
-
-  const { listelements } = useHeaderLinks();
-  const { listelementsWithAuth } = useHeaderLinks();
   const { currentUser } = useAuth();
 
   const puburl = process.env.PUBLIC_URL
@@ -18,7 +14,6 @@ const Linklist = () => {
     }
   }
 
-
   return (
     <ul className="HeaderLinkList">
       {/* {isUserAuthList.map((item, i) => (
@@ -29,6 +24,7 @@ const Linklist = () => {
       <HLink to={"/offers"} name="Tilbud" image={puburl + "offers.png"}/>
       <HLink to={"/aboutus"} name="Om oss" image={puburl + "about.png"}/>
       <HLink to={loggedIn()} name="Logg inn" image={puburl + "profile.png"}/>
+      <HLink to={"/cart"} name="Handlekurv" image={puburl + "cart.png"}/>
     </ul>
   );
 };
