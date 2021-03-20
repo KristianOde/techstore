@@ -57,8 +57,7 @@
 }
 
 .HeaderNavigation > ul > li > a {
-    color: turquoise;
-    font-weight: bold;
+    color: black;
 }
 
 .HeaderSearchBar {
@@ -73,7 +72,7 @@
     height: 35px;
     font-size: 1.2em;
     text-indent: 2%;
-    border-radius: 2px;
+    border-radius: 1px;
     border: none;
     border: 2px solid turquoise;
 }
