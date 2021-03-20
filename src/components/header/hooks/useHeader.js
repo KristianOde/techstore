@@ -5,7 +5,6 @@
 import React, { createContext, useState, useContext } from 'react'
 
 const list = [
-    {"to":"/", "name":"Hjem"},
     {"to":"test2", "name":"Kategorier"},
     {"to":"test3", "name":"Tilbud"},
     {"to":"test4", "name":"Min Side"},

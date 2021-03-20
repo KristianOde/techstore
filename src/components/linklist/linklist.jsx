@@ -8,17 +8,27 @@ const Linklist = () => {
   const { listelementsWithAuth } = useHeaderLinks();
   const { currentUser } = useAuth();
 
-  if (currentUser == null) {
-    var isUserAuthList = listelements;
-  } else {
-    var isUserAuthList = listelementsWithAuth;
+  const puburl = process.env.PUBLIC_URL
+
+  function loggedIn() {
+    if (currentUser == null) {
+      return "/login"
+    } else {
+      return "profile"
+    }
   }
+
 
   return (
     <ul className="HeaderLinkList">
-      {isUserAuthList.map((item, i) => (
+      {/* {isUserAuthList.map((item, i) => (
         <HLink key={i} to={item.to} name={item.name} />
-      ))}
+      ))} */}
+
+      <HLink to={"/products"} name="Kategorier" image={puburl + "categories.png"}/>
+      <HLink to={"/offers"} name="Tilbud" image={puburl + "offers.png"}/>
+      <HLink to={"/aboutus"} name="Om oss" image={puburl + "about.png"}/>
+      <HLink to={loggedIn()} name="Logg inn" image={puburl + "profile.png"}/>
     </ul>
   );
 };
