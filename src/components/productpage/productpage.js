@@ -18,7 +18,7 @@ const ProductPage = () => {
     return (
         <div className="ProductPage">
             <ProductBox product={product}/>
-            <h1>test</h1>
+            {/** Recommended products component */}
         </div>
     )
 }

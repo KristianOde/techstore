@@ -1,4 +1,4 @@
-![logo](https://github.com/KristianUSN/techstore/blob/master/public/TheFlaskehals.png?raw=true)
+![logo](https://github.com/KristianUSN/techstore/blob/master/public/logo.png?raw=true)
 # [THE FLASKEHALS](https://theflaskehals.herokuapp.com)
 Bachelorprosjekt av Kristian og Mikael. Klikk tittelen for å besøke nettsiden ☝️
 

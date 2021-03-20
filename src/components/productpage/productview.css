@@ -3,5 +3,24 @@
     margin: 0 auto;
     flex-direction: column;
     width: 100%;
-    border: 5px solid red;
+    border: 0px solid red;
+}
+
+.ProductBox {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    height: 500px;
+}
+
+.ProductBox > img {
+    width: 50%;
+    object-fit: cover;
+}
+
+.ProductBoxInfo {
+    flex: 1;
+    text-align: left;
+    font-size: 0.8em;
+    padding: 10px;
 }

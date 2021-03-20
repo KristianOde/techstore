@@ -36,7 +36,7 @@ const Offer = ({product}) => {
                     <strong>Før:</strong> {price},-  
                     <strong> Nå: </strong> {Math.round(price * 0.6)},-
                 </p>
-                <button onClick={() => navigateToProduct()}>KJØP</button>
+                <button className="BuyButton" onClick={() => navigateToProduct()}>KJØP</button>
             </div>
         </div>
     )

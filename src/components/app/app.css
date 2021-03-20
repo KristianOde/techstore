@@ -39,3 +39,18 @@
   line-height: 20px;
   background-color: lavender;
 }
+
+/** Universal styles */
+
+.BuyButton {
+  background-color: darkcyan;
+  border: none;
+  border-radius: 3px;
+  font-size: 1.2em;
+  color: white;
+  cursor:pointer;
+}
+
+.big {
+  font-size: 2em;
+}
