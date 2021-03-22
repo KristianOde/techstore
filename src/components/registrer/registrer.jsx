@@ -16,7 +16,7 @@ const Registrer = () => {
     if (result.error && result2.error) {
       console.log("sadsadsad");
     } else {
-      navigate("/profil");
+      navigate("/profile");
     }
   }
 

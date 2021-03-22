@@ -35,7 +35,7 @@ function App() {
           <Route path="/product/:productId">
             <ProductPage/>
           </Route>
-          <ProtectedRoute  isAuth={true} path="/profil" component={ProfilSide}  redirectTo='/login'/>
+          <ProtectedRoute  isAuth={true} path="/profile" component={ProfilSide}  redirectTo='/login'/>
 
         </Routes>
         <Footer />

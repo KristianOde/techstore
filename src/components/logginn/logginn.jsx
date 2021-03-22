@@ -15,7 +15,7 @@ const Logginn = () => {
     if (result.error) {
       console.log("sadsadsad");
     } else {
-      navigate("/profil");
+      navigate("/profile");
     }
   }
 

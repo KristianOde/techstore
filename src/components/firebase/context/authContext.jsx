@@ -24,10 +24,14 @@ export function AuthProvider ({ children }) {
     }
 
     function registrerBrukerFirestore(epost, brukernavn, passord) {
-        return db.collection("Brukere").doc(brukernavn).set({
+        return db.collection("Brukere").doc(epost).set({
             epost: epost,
             brukernavn: brukernavn,
           });  
+    }
+
+    function getUserInfo(epost) {
+        return db.collection("Brukere").doc(epost).get("brukernavn");  
     }
 
     function loggUt() {
@@ -38,6 +42,7 @@ export function AuthProvider ({ children }) {
         const unsubscribe = auth.onAuthStateChanged(user => {
             setCurrentUser(user)
             setLoading(false)
+            setIsLoggedIn(true)
         })
     }, [])
 
@@ -46,7 +51,9 @@ export function AuthProvider ({ children }) {
         loggInnFirebase,
         registrerBrukerFirebase,
         registrerBrukerFirestore,
-        loggUt
+        loggUt, 
+        isLoggedIn,
+        getUserInfo
     }
 
     return (
