@@ -15,14 +15,12 @@ const ProfilSide = () => {
   useEffect(() => {
     let unsubscribeSnapshot;
     const unsubscribeAuth = firebase.auth().onAuthStateChanged(() => {
-      // you're not dealing with promises but streams so async/await is not needed here
         unsubscribeSnapshot = db
           .collection("Brukere")
           .where("epost", "==", "mikaae@hotmail.com")
           .onSnapshot((snapshot) => {
             setPosts(snapshot.docs.map((doc) => doc.data()));
           });
-      
     });
     return () => {
       unsubscribeAuth();
@@ -47,14 +45,14 @@ const ProfilSide = () => {
               </tr>
               <tr>
                 <th>Brukernavn</th>
-                {posts.map(({epost}) => (<td key="epost">{epost}</td>))}
+                
                 <td>
                   <button></button>
                 </td>
               </tr>
               <tr>
                 <th>Epost</th>
-                {posts.map(({brukernavn}) => (<td key="brukernavn">{brukernavn}</td>))}
+                
               </tr>
               <tr>
                 <th>Passord</th>
