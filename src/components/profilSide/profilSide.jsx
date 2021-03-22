@@ -11,7 +11,7 @@ const ProfilSide = () => {
   const { loggUt } = useAuth();
   const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
-
+/*
   useEffect(() => {
     let unsubscribeSnapshot;
     const unsubscribeAuth = firebase.auth().onAuthStateChanged(() => {
@@ -27,7 +27,7 @@ const ProfilSide = () => {
       unsubscribeSnapshot && unsubscribeSnapshot();
     };
   });
-  
+  */
   async function onSubmit() {
     await loggUt().then(navigate("/"));
   }
