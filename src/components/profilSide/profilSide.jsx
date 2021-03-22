@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
 import { useAuth } from "../firebase/context/authContext";
 import { useNavigate } from "react-router-dom";
 import "../../styles/profile.css";
@@ -9,25 +8,21 @@ import 'firebase/firestore';
 const db = firebase.firestore()
 
 const ProfilSide = () => {
-  const { register, handleSubmit, errors } = useForm();
-  const [loading, setLoading] = useState(false);
-  const { loggUt, currentUser, getUserInfo } = useAuth();
+  const { loggUt } = useAuth();
   const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     let unsubscribeSnapshot;
-    const unsubscribeAuth = firebase.auth().onAuthStateChanged((_user) => {
+    const unsubscribeAuth = firebase.auth().onAuthStateChanged(() => {
       // you're not dealing with promises but streams so async/await is not needed here
-      if (!_user) {
-      } else {
         unsubscribeSnapshot = db
           .collection("Brukere")
-          .where("epost", "==", currentUser.email)
+          .where("epost", "==", "mikaae@hotmail.com")
           .onSnapshot((snapshot) => {
             setPosts(snapshot.docs.map((doc) => doc.data()));
           });
-      }
+      
     });
     return () => {
       unsubscribeAuth();
@@ -45,7 +40,6 @@ const ProfilSide = () => {
         <div className="userControlBox">
           <table className="userInfoTable">
             <tbody>
-              
               <tr>
                 <th colSpan="3" className="userInfoTableHeader">
                   Brukerinformasjon
