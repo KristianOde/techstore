@@ -8,26 +8,26 @@ import 'firebase/firestore';
 const db = firebase.firestore()
 
 const ProfilSide = () => {
-  const { loggUt } = useAuth();
+  const { loggUt, currentUser } = useAuth();
   const navigate = useNavigate();
-  const [posts, setPosts] = useState([]);
-/*
+  const [bruker, setBruker] = useState([]);
+
   useEffect(() => {
     let unsubscribeSnapshot;
     const unsubscribeAuth = firebase.auth().onAuthStateChanged(() => {
         unsubscribeSnapshot = db
           .collection("Brukere")
-          .where("epost", "==", "mikaae@hotmail.com")
+          .where("epost", "==", currentUser.email)
           .onSnapshot((snapshot) => {
-            setPosts(snapshot.docs.map((doc) => doc.data()));
+            setBruker(snapshot.docs.map((doc) => doc.data()));
           });
     });
     return () => {
       unsubscribeAuth();
       unsubscribeSnapshot && unsubscribeSnapshot();
     };
-  });
-  */
+  }, []);
+  
   async function onSubmit() {
     await loggUt().then(navigate("/"));
   }
@@ -45,21 +45,21 @@ const ProfilSide = () => {
               </tr>
               <tr>
                 <th>Brukernavn</th>
-                
-                <td>
+                <td key="brukernavn">{bruker.map(({brukernavn}) => brukernavn)}</td>
+                <th>
                   <button></button>
-                </td>
+                </th>
               </tr>
               <tr>
                 <th>Epost</th>
-                
+                <td key="epost">{bruker.map(({epost}) => epost)}</td>
               </tr>
               <tr>
                 <th>Passord</th>
                 <td>********</td>
-                <td>
+                <th>
                   <button></button>
-                </td>
+                </th>
               </tr>
               <tr>
                 <th>Profil opprettet</th>
@@ -68,9 +68,9 @@ const ProfilSide = () => {
               <tr>
                 <th>Adresse</th>
                 <td>Mangler funksjon</td>
-                <td>
+                <th>
                   <button></button>
-                </td>
+                </th>
               </tr>
             </tbody>
           </table>

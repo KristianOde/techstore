@@ -27,6 +27,7 @@
 
 .userInfoTable td {
   width: 80%;
+  text-align: left;
 }
 
 .userInfoTable button {
