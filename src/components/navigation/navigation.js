@@ -1,7 +1,54 @@
+import { useLocation, useNavigate } from 'react-router-dom'
+import { capitalize, buildUrl } from '../../utils/utils'
+
+const Navigator = ({location, navigateTo}) => {
+    return (
+        <>
+            {location.map((positionName, i) => {
+                if (i === 0) return <span onClick={() => navigateTo(0)} style={{cursor: "pointer"}}>Forside / </span> 
+                return <NavigateItem 
+                            key={i} 
+                            item={{positionName, index: i}}
+                            lastPosition={i == location.length - 1 ? true : false}
+                            navigateTo={navigateTo}
+                        />
+            })}
+        </>
+    )
+}
+
+const NavigateItem = ({item, lastPosition, navigateTo}) => {
+    const positionName = capitalize(item.positionName)
+
+    return (
+        !lastPosition ?
+        <>
+            <span onClick={() => navigateTo(item.index)} style={{cursor: "pointer"}}>
+                {positionName}
+            </span> / {" "}
+        </> : 
+        <>
+            <span>
+                {positionName}
+            </span>
+        </>
+    )
+}
+
+
 const Navigation = () => {
+    const location = useLocation().pathname.split("/")
+    const navigate = useNavigate()
+
+    function navigateTo(index) {
+        const url = buildUrl(location, index)
+        console.log("url: ")
+        navigate(url, {replace: true})
+    }
+
     return(
         <span className="Navigationbar">
-            Forside {"/"} Skjermkort {"/"} Nvidia 3070
+            <Navigator location={location} navigateTo={navigateTo}/>
         </span>
     )
 }
