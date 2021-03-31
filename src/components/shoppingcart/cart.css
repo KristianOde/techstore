@@ -1,0 +1,66 @@
+.cartPage {
+    display: flex;
+    flex-direction: row;
+}
+
+.cartPageBottleNeckCalc {
+    width: 50%;
+    height: 300px;
+    margin: 5px 5px 10px 10px;
+}
+
+.cartPageBottleNeckCalc > img {
+    width: 90%;
+}
+
+.cartPageList {
+    width: 50%;
+    margin: 5px 10px 10px 5px;
+}
+
+.cartItem {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 50px;
+    margin: -1px;
+    border-top: 1px solid teal;
+    border-bottom: 1px solid teal;
+}
+
+.cartItem:first-of-type {
+    border-top: none;
+}
+
+.cartItem:last-of-type {
+    border-bottom: none;
+}
+
+.cartItemLeft {
+    display: block;
+}
+
+.cartItemRight {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.cartPrice {
+    text-align: end;
+    margin-right: 20px;
+}
+
+.cartItemLeft > span {
+    padding: 0 20px;
+}
+
+.cartItemRight > button {
+    height: 50px;
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: teal;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}

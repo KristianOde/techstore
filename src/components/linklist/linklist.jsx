@@ -9,7 +9,7 @@ const Linklist = () => {
       <HLink to={"/products"} name="Kategorier" image={puburl + "categories.png"}/>
       <HLink to={"/offers"} name="Tilbud" image={puburl + "offers.png"}/>
       <HLink to={"/aboutus"} name="Om oss" image={puburl + "about.png"}/>
-      <HLink to={"/profile"} name="Logg inn" image={puburl + "profile.png"}/>
+      <HLink to={"/profile"} name="Profil" image={puburl + "profile.png"}/>
       <HLink to={"/cart"} name="Handlekurv" image={puburl + "cart.png"}/>
     </ul>
   );
