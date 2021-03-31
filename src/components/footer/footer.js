@@ -8,7 +8,7 @@ const Footer = () => {
                 Lagd av Kristian og Mikael – 
                 USN
             </span>
-            <a href="https://github.com/KristianUSN/techstore">GitHub</a>
+            <a href="https://github.com/KristianUSN/techstore" target="_blank">GitHub</a>
         </div>
     )
 }
