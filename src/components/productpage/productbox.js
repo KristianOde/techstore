@@ -1,18 +1,18 @@
 import React from 'react'
+import useFireImage from "../firebase/useFireImage";
 
-const ProductBox = ({product}) => {
-    console.log(product)
-    const image = process.env.PUBLIC_URL + '/' + product.image
-    console.log(image)
+const ProductBox = ({ product }) => {
+
+    const [imageUrl] = useFireImage(product.Navn)
 
     return (
         <div className="ProductBox">
-            <img src={image} alt=""/>
+            <img src={imageUrl} alt=""/>
             <div className="ProductBoxInfo">
-                <h1>{product.name}</h1>
+                <h1>{product.Navn}</h1>
                 <h2>{product.shortdescription}</h2>
-                <p>{product.description}</p>
-                <h2>kr {product.price},-</h2>
+                <p>{product.Beskrivelse}</p>
+                <h2>kr {Math.round(product.Pris - (product.Pris * (product.Tilbud / 100)))},-</h2>
                 <button className="BuyButton big">KJØP</button>
             </div>
 

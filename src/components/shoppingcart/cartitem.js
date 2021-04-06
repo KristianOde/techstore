@@ -7,10 +7,10 @@ const CartItem = ({item}) => {
     return (
         <div className="cartItem cart">
             <div className="cartItemLeft">
-                <span style={{fontWeight:"bold"}}>{item.name}</span>
+                <span style={{fontWeight:"bold"}}>{item.Navn}</span>
             </div>
             <div className="cartItemRight">
-                <span className="cartPrice">{item.price},-</span>
+                <span className="cartPrice">{item.Pris},-</span>
                 <button onClick={() => removeItemFromCart(item.id)}>X</button>
             </div>
         </div>
