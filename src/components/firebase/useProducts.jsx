@@ -9,25 +9,44 @@ const useProducts = (productID) => {
   useEffect(() => {
     let unsubscribeSnapshot;
     const unsubscribeAuth = firebase.auth().onAuthStateChanged(() => {
-      if (productID == "all") {
-        unsubscribeSnapshot = db
-          .collection("Produkter")
-          .onSnapshot((snapshot) => {
-            setProdukter(snapshot.docs.map((doc) => doc.data()));
-          });
-      } else {
-        db.collection("Produkter")
-          .doc(productID)
-          .get()
-          .then((doc) => {
-            if (doc.exists) {
-              //console.log("Document data:", doc.data());
-              setProdukter(doc.data())
-            } else {
-              console.log("No such document!");
-            }
-          });
+      switch (productID) {
+        case "all":
+          unsubscribeSnapshot = db
+            .collection("Produkter")
+            .onSnapshot((snapshot) => {
+              setProdukter(snapshot.docs.map((doc) => doc.data()));
+            });
+          break;
+          case productID:
+            unsubscribeSnapshot = db
+            .collection("Produkter")
+            .where("Kategori", "==", productID)
+            .onSnapshot((snapshot) => {
+              setProdukter(snapshot.docs.map((doc) => doc.data()));
+            });
+          break;
+          case "tilbud":
+            unsubscribeSnapshot = db
+            .collection("Produkter")
+            .where("Tilbud", "!=", 0)
+            .onSnapshot((snapshot) => {
+              setProdukter(snapshot.docs.map((doc) => doc.data()));
+            });
+          break;
+        default:
+          db.collection("Produkter")
+            .doc(productID)
+            .get()
+            .then((doc) => {
+              if (doc.exists) {
+                //console.log("Document data:", doc.data());
+                setProdukter(doc.data());
+              } else {
+                console.log("No such document!");
+              }
+            });
       }
+
     });
     return () => {
       unsubscribeAuth();
