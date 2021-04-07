@@ -13,7 +13,7 @@ const CartPage = () => {
 
     let totalCost = 0
     cartItems.forEach(e => {
-        totalCost += e.price
+        totalCost += e.Pris
     });
 
     const logo = process.env.PUBLIC_URL + 'bottle.svg'
