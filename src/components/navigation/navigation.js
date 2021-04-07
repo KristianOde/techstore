@@ -5,7 +5,7 @@ const Navigator = ({location, navigateTo}) => {
     return (
         <>
             {location.map((positionName, i) => {
-                if (i === 0) return <span onClick={() => navigateTo(0)} style={{cursor: "pointer"}}>Forside / </span> 
+                if (i === 0) return <><span onClick={() => navigateTo(0)} className="CustomLink">Forside</span><span> / </span></>
                 return <NavigateItem 
                             key={i} 
                             item={{positionName, index: i}}
@@ -23,7 +23,7 @@ const NavigateItem = ({item, lastPosition, navigateTo}) => {
     return (
         !lastPosition ?
         <>
-            <span onClick={() => navigateTo(item.index)} style={{cursor: "pointer"}}>
+            <span className="CustomLink" onClick={() => navigateTo(item.index)}>
                 {positionName}
             </span> / {" "}
         </> : 

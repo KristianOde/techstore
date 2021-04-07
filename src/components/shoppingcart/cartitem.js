@@ -5,7 +5,7 @@ const CartItem = ({item}) => {
     const {removeItemFromCart} = useContext(CartContext)
 
     return (
-        <div className="cartItem cart">
+        <div className="cartItem">
             <div className="cartItemLeft">
                 <span style={{fontWeight:"bold"}}>{item.name}</span>
             </div>

@@ -22,6 +22,14 @@ code {
       monospace;
 }
 
+.CustomLink {
+    cursor: pointer;
+}
+
+.CustomLink:hover {
+    text-decoration: underline;
+}
+
 @media only screen and (max-width: 1200px) {
     body {
         width: 100%;

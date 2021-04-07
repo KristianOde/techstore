@@ -25,7 +25,7 @@ const Offer = ({product}) => {
 
 
     const navigateToProduct = () => {
-        navigate(`/product/${prod.id}`, {replace: true})
+        navigate(`/products/${prod.id}`, {replace: true})
     }
 
     return(

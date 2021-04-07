@@ -28,11 +28,11 @@
     border-bottom: 1px solid teal;
 }
 
-.cartItem:first-of-type {
+.cartItem:first-child {
     border-top: none;
 }
 
-.cartItem:last-of-type {
+.cartItem:last-child {
     border-bottom: none;
 }
 
@@ -64,3 +64,39 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     cursor: pointer;
 }
+
+.emptyCartButton {
+    border: none;
+    background: none;
+    text-decoration: underline;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+@keyframes wobble {
+    0% {}
+    50% { transform: rotate(5deg)}
+    100% { transform: rotate(10deg) }
+}
+
+.bottleLiquid {
+    transition: fill 0.4s;
+}
+
+/* Different colors to display on the bottle svg */
+.whiteLiquid > .bottleLiquid {
+    fill: white;
+}
+
+.greenLiquid > .bottleLiquid {
+    fill: greenyellow;
+}
+
+.yellowLiquid > .bottleLiquid {
+    fill: yellow;
+}
+
+.redLiquid > .bottleLiquid {
+    fill: red;
+}
+
