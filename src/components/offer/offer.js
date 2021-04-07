@@ -24,26 +24,7 @@ const Offer = ({ product }) => {
 
   const { addItemToCart } = useContext(CartContext);
   const navigate = useNavigate();
-  //const [fireImageUrl] = useFireImage(product.Navn)
-
-  useEffect(() => {
-    const fetchImages = async () => {
-      
-      let result = await storageRef.child(product.Navn).listAll();
-      let urlPromises = result.items.map((imageRef) =>
-        imageRef.getDownloadURL()
-      );
-      return Promise.all(urlPromises);
-    };
-    const loadImages = async () => {
-      const urls = await fetchImages();
-      setImageUrl(urls);
-      setTimeout(() => { // Temp
-        setLoading(false);
-     }, 400);
-    };
-    loadImages();
-  }, []);
+  const [fireImageUrl] = useFireImage(product.Navn, null);
 
   const navigateToProduct = () => {
     navigate(`/product/${product.Navn}`, { replace: true });
@@ -55,16 +36,7 @@ const Offer = ({ product }) => {
         className="ProductImageThumbnail"
         onClick={() => navigateToProduct()}
       >
-        <img
-          src={loadingBilde}
-          alt="Produktbilde"
-          style={loading ? {} : { display: "none" }}
-        />
-        <img
-          src={imageUrl}
-          alt="Produktbilde"
-          style={loading ? { display: "none" } : {}}
-        />
+        <img src={fireImageUrl} alt="Produktbilde" />
 
         <div className="OfferPercentageTag">-{product.Tilbud}%</div>
       </div>
@@ -73,7 +45,8 @@ const Offer = ({ product }) => {
         <h4></h4>
         <p>
           <strong>Før:</strong> {product.Pris},-
-          <strong> Nå: </strong> {Math.round(product.Pris - (product.Pris * (product.Tilbud / 100)))},-
+          <strong> Nå: </strong>{" "}
+          {Math.round(product.Pris - product.Pris * (product.Tilbud / 100))},-
         </p>
         <button className="BuyButton" onClick={() => addItemToCart(product)}>
           KJØP

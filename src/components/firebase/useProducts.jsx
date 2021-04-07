@@ -17,7 +17,7 @@ const useProducts = (productID) => {
               setProdukter(snapshot.docs.map((doc) => doc.data()));
             });
           break;
-          case productID:
+          case 1: case 2: case 3: case 4: case 5: case 6:// Kategorier (1 = skjermkort, 2 = prosessor etc.)
             unsubscribeSnapshot = db
             .collection("Produkter")
             .where("Kategori", "==", productID)
@@ -29,6 +29,14 @@ const useProducts = (productID) => {
             unsubscribeSnapshot = db
             .collection("Produkter")
             .where("Tilbud", "!=", 0)
+            .onSnapshot((snapshot) => {
+              setProdukter(snapshot.docs.map((doc) => doc.data()));
+            });
+          break;
+          case "ettProdukt":
+            unsubscribeSnapshot = db
+            .collection("Produkter")
+            .where("Navn", "==", productID)
             .onSnapshot((snapshot) => {
               setProdukter(snapshot.docs.map((doc) => doc.data()));
             });
