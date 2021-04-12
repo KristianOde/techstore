@@ -5,9 +5,9 @@ const Navigator = ({location, navigateTo}) => {
     return (
         <>
             {location.map((positionName, i) => {
-                if (i === 0) return <><span onClick={() => navigateTo(0)} className="CustomLink">Forside</span><span> / </span></>
+                if (i === 0) return <span key={i}><span onClick={() => navigateTo(0)} className="CustomLink">Forside</span><span> / </span></span>
                 return <NavigateItem 
-                            key={i} 
+                            key={i}
                             item={{positionName, index: i}}
                             lastPosition={i == location.length - 1 ? true : false}
                             navigateTo={navigateTo}
@@ -42,7 +42,6 @@ const Navigation = () => {
 
     function navigateTo(index) {
         const url = buildUrl(location, index)
-        console.log("url: ")
         navigate(url, {replace: true})
     }
 

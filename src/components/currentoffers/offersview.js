@@ -6,7 +6,7 @@ import 'firebase/firestore';
 import useProducts from "../firebase/useProducts";
 
 const Offers = () => {
-    const [games] = useRawgApi("list", "final-fantasy")
+    // const [games] = useRawgApi("list", "final-fantasy")
     const [bruker, setBruker] = useProducts("all")
 
     const createOffers = () => {

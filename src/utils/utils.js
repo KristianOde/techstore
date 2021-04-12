@@ -5,7 +5,6 @@ function capitalize(string) {
 /** Builds an url to be used with React-Router */
 function buildUrl(array, index) {
     let urlString = "/"
-    console.log("array: " + array)
     for (let i = 0; i <= index; i++) {
         urlString += ("/" + array[i])
     }
@@ -16,4 +15,22 @@ function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
 }
 
-export { capitalize, buildUrl, randomNumber }
+function checkIfObjectKeyExists(objectKey, objectArray) {
+    objectArray.forEach(e => {
+        const filterType = Object.keys(e)
+        if (objectKey === filterType)
+            return true
+        else return false
+    })
+}
+
+function checkIfObjectValueExists(objectValue, objectArray, value) {
+    if (objectArray.length < 1) return false
+    objectArray.forEach(e => {
+        if (objectArray[value] === objectValue)
+            return true
+        else return false
+    })
+}
+
+export { capitalize, buildUrl, randomNumber, checkIfObjectKeyExists, checkIfObjectValueExists }

@@ -26,7 +26,6 @@ const CartPage = () => {
     }
 
     const clickBottle = () => {
-        console.log("Bottle clicked")
     }
     
 

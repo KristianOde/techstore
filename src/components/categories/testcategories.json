@@ -1,0 +1,43 @@
+{
+    "categories": [
+        {
+            "category": "Produsent",
+            "options": [
+                {"category": "produsent", "name": "Intel", "active": false},
+                {"category": "produsent", "name": "AMD", "active": false}
+            ]
+        },
+        {
+            "category": "Klokkehastighet",
+            "options": [
+                {"category": "klokkehastighet", "name": "1.5GHz - 1.9GHz", "active": false},
+                {"category": "klokkehastighet", "name": "2.0GHz - 2.9GHz", "active": false},
+                {"category": "klokkehastighet", "name": "3.0GHz - 3.9GHz", "active": false},
+                {"category": "klokkehastighet", "name": "4.0Ghz og over", "active": false}
+            ]
+        },
+        {
+            "category": "Klasse",
+            "options": [
+                {"category": "klasse", "name": "Core i3", "active": false},
+                {"category": "klasse", "name": "Core i5", "active": false},
+                {"category": "klasse", "name": "Core i7", "active": false},
+                {"category": "klasse", "name": "Core i9", "active": false},
+                {"category": "klasse", "name": "Ryzen 3", "active": false},
+                {"category": "klasse", "name": "Ryzen 5", "active": false},
+                {"category": "klasse", "name": "Ryzen 7", "active": false},
+                {"category": "klasse", "name": "Ryzen 9", "active": false}
+            ]
+        },
+        {
+            "category": "Sokkel",
+            "options": [
+                {"category": "sokkel", "name": "LGA1151", "active": false},
+                {"category": "sokkel", "name": "LGA1200", "active": false},
+                {"category": "sokkel", "name": "LGA2066", "active": false},
+                {"category": "sokkel", "name": "LGA3647", "active": false},
+                {"category": "sokkel", "name": "AM4", "active": false}
+            ]
+        }
+    ]
+}

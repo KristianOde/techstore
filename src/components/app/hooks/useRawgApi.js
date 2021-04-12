@@ -36,7 +36,6 @@ const useRawgApi = (searchform, searchparam) => {
     }
 
     const searchById = (id) => {
-        console.log("Search by id " + id)
         setQuery(
             `${apiUrl}/games/${id}?${key}`
         )
@@ -44,7 +43,6 @@ const useRawgApi = (searchform, searchparam) => {
     }
 
     const searchByName = (searchString) => {
-        console.log("Search by name " + searchString)
         setQuery(
             `${apiUrl}/games?${key}&search=${searchString}`
         )

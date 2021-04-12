@@ -17,17 +17,70 @@
 }
 
 .CategoryListElement > button:hover {
-    background-color: grey;
+    background-color: rgb(48, 48, 48);
 }
 
-.CategoryListElement > * {
+.CategoryListElement > button {
     height: 40px;
     width: 100%;
     text-decoration: none;
     font-size: 1.4em;
-    color: honeydew;
-    background-color: rgb(160, 160, 160);
+    font-weight: bold;
+    color: white;
+    background-color: rgb(122, 122, 122);
     border-radius: 3px;
     border: none;
     cursor: pointer;
+}
+
+.CategoryMainView {
+    display: flex;
+    flex-direction: row;
+}
+
+.CategoryMainView > div:nth-child(1) {
+    width: 15%;
+    margin: 5px 5px 5px 15px;
+}
+
+.CategoryMainView > div:nth-child(2) {
+    width: 85%;
+    margin: 5px 15px 5px 5px;
+}
+
+.CategorySidebar {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0px 0 5px;
+}
+
+.FilterCheckbox {
+    text-align: left;
+    padding: 3px 0px;
+    font-size: 1.1em;
+}
+
+.FilterCheckbox > input {
+    margin-right: 10px;
+}
+
+.PriceSlider {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.InnerRangeTrack {
+    height: 8px;
+    background-color: rgb(192, 192, 192);
+    margin: 10px 10px;
+    border-radius: 5px;
+}
+
+.RangeThumbs {
+    height: 20px;
+    width: 15px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    border: 2px solid rgb(110, 110, 110);
 }

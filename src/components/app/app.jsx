@@ -14,6 +14,7 @@ import ProtectedRoute from '../protectedRoutes/protectedRoute';
 import Footer from '../footer/footer'
 import CartPage from '../shoppingcart/cartpage';
 import CategoryPage from '../categories/categorypage';
+import ProductFilterProvider from '../categories/hooks/useProductFilter';
 
 function App() {
   return (
@@ -32,7 +33,9 @@ function App() {
                 <ProductPage />
               </Route>
               <Route path="/products/*">
-                <CategoryPage />
+                <ProductFilterProvider>
+                  <CategoryPage />
+                </ProductFilterProvider>
               </Route>
               <Route path="/login" element={<LoginForm />} />
               <Route path="/registrer" element={<Registrer />} />
