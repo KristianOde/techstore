@@ -1,12 +1,8 @@
 import React, { useState } from 'react'
 import { useProductFilterContext } from '../hooks/useProductFilter'
 
-const FilterCheckbox = ({category, option}) => {
-    const {dispatch} = useProductFilterContext()
-
-    function toggle(name) {
-        dispatch({ type: 'toggle', payload: name})
-    }
+const FilterCheckbox = ({option}) => {
+    const {toggle} = useProductFilterContext()
 
     return (
         <div className="FilterCheckbox" onClick={() => toggle(option.name)}>

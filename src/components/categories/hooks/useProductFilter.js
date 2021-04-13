@@ -1,5 +1,5 @@
-import React, { createContext, useEffect, useState, useContext, useReducer } from 'react'
-import IntelCategories from '../testcategories.json'
+import React, { createContext, useEffect, useState, useContext, useReducer, useMemo, useCallback, useLayoutEffect } from 'react'
+import Categories from '../testcategories.json'
 
 let ProductFilterContext
 let { Provider } = (ProductFilterContext = createContext())
@@ -8,17 +8,21 @@ export const useProductFilterContext = () => useContext(ProductFilterContext)
 const ProductFilterProvider = ({ children }) => {
     const [productCategory, setProductCategory] = useState("cpu")
     const [priceRange, setPriceRange] = useState([0, 20000])
-    const [urlFilterParameter, seturlFilterParameter] = useState("")
+    const [urlFilterParameter, setUrlFilterParameter] = useState("")
+    const [filters, setFilters] = useState([])
 
     const categoryImport = () => {
         switch (productCategory) {
             case "cpu":
-                return IntelCategories        
+                return Categories.cpu   
+            case "gpu":
+                return Categories.gpu     
             default:
                 return null
         }
     }
 
+    /** For å gjøre et array simplere å oppdatere state i */
     const convertToFilterArray = (array) => {
         const a = []
         array.forEach(e => {
@@ -29,22 +33,66 @@ const ProductFilterProvider = ({ children }) => {
         return a
     }
 
-    const reducer = (filters, action) => {
-        if (action.type == 'toggle') {
-            return filters.map(filter => {
-                if(filter.name == action.payload) {
-                    filter.active = !filter.active
-                }
-                return filter
-            })
-        }
+    const categoryFilters = () => {
+        return convertToFilterArray(categoryImport())
     }
 
-    const [filters, dispatch] = useReducer(reducer, convertToFilterArray(categoryImport().categories))
+    useEffect(() => {
+        setFilters(categoryFilters())
+    }, [])
 
     useEffect(() => {
-        seturlFilterParameter(urlFilterParameterGen())
+        resetFilters()
+        setFilters(categoryFilters())
+    }, [productCategory])
+    
+    // const reducer = (filters, action) => {
+    //     switch (action.type) {
+    //         case "toggle":
+    //             console.log("toggling option")
+    //             return filters.map(filter => {
+    //                 if(filter.name == action.payload) {
+    //                     filter.active = !filter.active
+    //                 }
+    //                 return filter
+    //             })
+    //         case "refresh":
+    //             console.log("refreshed filters")
+    //             return categoryFilters()
+    //         default:
+    //             break;
+    //     }
+    // }
+
+    // const [filters, dispatch] = useReducer(reducer, categoryFilters())
+
+    // function refreshFilters() {
+    //     dispatch({ type: 'refresh' })
+    // }
+
+    useEffect(() => {
+        setUrlFilterParameter(urlFilterParameterGen())
     }, [productCategory, filters, priceRange])
+
+    const toggle = (objectName) => {
+        let newArray = [...filters]
+        newArray.forEach(e => {
+            if (e.name === objectName)
+                e.active = !e.active
+        })
+        setFilters(newArray)
+        console.log(filters)
+    }
+
+    const resetFilters = () => {
+        let newArray = [...filters]
+        newArray.forEach(e => {
+            if (e.active)
+                e.active = false
+        })
+        setFilters(newArray)
+    }
+    
 
     const urlFilterParameterGen = () => {
         let string = `p=${productCategory}`
@@ -57,17 +105,15 @@ const ProductFilterProvider = ({ children }) => {
         string += `&price.min=${priceRange[0]}&price.max=${priceRange[1]}`
         return string
     }
-    
 
     const updateValues = (values) => {
         setPriceRange(values)
     }
 
-
     return (
         <Provider value={{
             productCategory, filters, priceRange, urlFilterParameter,
-            setProductCategory, updateValues, dispatch
+            setProductCategory, updateValues, toggle
         }}>
             {children}
         </Provider>

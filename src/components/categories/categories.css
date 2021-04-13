@@ -58,6 +58,7 @@
     text-align: left;
     padding: 3px 0px;
     font-size: 1.1em;
+    cursor: pointer;
 }
 
 .FilterCheckbox > input {

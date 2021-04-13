@@ -1,5 +1,79 @@
 {
-    "categories": [
+    "template": [
+        {
+            "category": "",
+            "options": [
+                {"category": "", "name": "", "active": false}
+            ]
+        }
+    ],
+    "accessories": [
+        {
+            "category": "",
+            "options": [
+                {"category": "", "name": "", "active": false}
+            ]
+        }
+    ],
+    "disks": [
+        {
+            "category": "",
+            "options": [
+                {"category": "", "name": "", "active": false}
+            ]
+        }
+    ],
+    "memory": [
+        {
+            "category": "",
+            "options": [
+                {"category": "", "name": "", "active": false}
+            ]
+        }
+    ],
+    "motherboard": [
+        {
+            "category": "",
+            "options": [
+                {"category": "", "name": "", "active": false}
+            ]
+        }
+    ],
+    "gpu": [
+        {
+            "category": "Produsent",
+            "options": [
+                {"category": "produsent", "name": "ASUS", "active": false},
+                {"category": "produsent", "name": "Gigabyte", "active": false},
+                {"category": "produsent", "name": "MSI", "active": false},
+                {"category": "produsent", "name": "Gainward", "active": false},
+                {"category": "produsent", "name": "Zotac", "active": false}
+            ]
+        },
+        {
+            "category": "Fabrikant",
+            "options": [
+                {"category": "fabrikant", "name": "Nvidia", "active": false},
+                {"category": "fabrikant", "name": "AMD", "active": false}
+            ]
+        },
+        {
+            "category": "Prosessor",
+            "options": [
+                {"category": "prosessor", "name": "Nvidia RTX 2060", "active": false},
+                {"category": "prosessor", "name": "Nvidia RTX 2070", "active": false},
+                {"category": "prosessor", "name": "Nvidia RTX 2080", "active": false},
+                {"category": "prosessor", "name": "Nvidia RTX 2090", "active": false},
+                {"category": "prosessor", "name": "Nvidia RTX 3060", "active": false},
+                {"category": "prosessor", "name": "Nvidia RTX 3070", "active": false},
+                {"category": "prosessor", "name": "Nvidia RTX 3080", "active": false},
+                {"category": "prosessor", "name": "Nvidia RTX 3090", "active": false},
+                {"category": "prosessor", "name": "AMD Radeon RX 6700 XT", "active": false},
+                {"category": "prosessor", "name": "AMD Radeon RX 6800", "active": false},
+                {"category": "prosessor", "name": "AMD Radeon RX 6900", "active": false}            ]
+        }
+    ],
+    "cpu": [
         {
             "category": "Produsent",
             "options": [
