@@ -1,6 +1,6 @@
 import React from 'react'
-import PriceSlider from './sidebaroptions/priceslider'
-import SidebarFilters from './sidebaroptions/sidebarfilters'
+import PriceSlider from './sidebarcomponents/priceslider'
+import SidebarFilters from './sidebarcomponents/sidebarfilters'
 
 const CategorySidebar = ({product}) => {
     

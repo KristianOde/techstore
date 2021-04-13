@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState, useContext, useReducer, useMemo, useCallback, useLayoutEffect } from 'react'
-import Categories from '../testcategories.json'
+import Categories from '../categories.json'
 
 let ProductFilterContext
 let { Provider } = (ProductFilterContext = createContext())
@@ -45,30 +45,6 @@ const ProductFilterProvider = ({ children }) => {
         resetFilters()
         setFilters(categoryFilters())
     }, [productCategory])
-    
-    // const reducer = (filters, action) => {
-    //     switch (action.type) {
-    //         case "toggle":
-    //             console.log("toggling option")
-    //             return filters.map(filter => {
-    //                 if(filter.name == action.payload) {
-    //                     filter.active = !filter.active
-    //                 }
-    //                 return filter
-    //             })
-    //         case "refresh":
-    //             console.log("refreshed filters")
-    //             return categoryFilters()
-    //         default:
-    //             break;
-    //     }
-    // }
-
-    // const [filters, dispatch] = useReducer(reducer, categoryFilters())
-
-    // function refreshFilters() {
-    //     dispatch({ type: 'refresh' })
-    // }
 
     useEffect(() => {
         setUrlFilterParameter(urlFilterParameterGen())
@@ -92,7 +68,6 @@ const ProductFilterProvider = ({ children }) => {
         })
         setFilters(newArray)
     }
-    
 
     const urlFilterParameterGen = () => {
         let string = `p=${productCategory}`

@@ -70,7 +70,8 @@
                 {"category": "prosessor", "name": "Nvidia RTX 3090", "active": false},
                 {"category": "prosessor", "name": "AMD Radeon RX 6700 XT", "active": false},
                 {"category": "prosessor", "name": "AMD Radeon RX 6800", "active": false},
-                {"category": "prosessor", "name": "AMD Radeon RX 6900", "active": false}            ]
+                {"category": "prosessor", "name": "AMD Radeon RX 6900", "active": false}
+            ]
         }
     ],
     "cpu": [
