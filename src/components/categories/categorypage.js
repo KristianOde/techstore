@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import CategoryHeader from './categoryheader'
 import CategorySidebar from './categorysidebar'
 import ProductFilterProvider, { useProductFilterContext } from './hooks/useProductFilter'
+import CategoryFilterResults from './resultscomponents/categoryfilterresults'
 
 /** eksempel på filter-parametre, fra komplett.no
 prosessorer?
@@ -31,8 +32,8 @@ const CategoryPage = () => {
         setProductCategory: setProduct, 
         urlFilterParameter, 
         filters,
+        resetFilters
     } = useProductFilterContext()
-    //const [values, setValues] = useCategories(0, 20000)
 
     return (
             <div>
@@ -48,6 +49,7 @@ const CategoryPage = () => {
                         {product}
                         <br/>
                         {urlFilterParameter}
+                        <CategoryFilterResults />
                     </div>
                 </div>
             </div>

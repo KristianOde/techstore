@@ -6,19 +6,19 @@
     border: 0px solid red;
 }
 
-.ProductBox {
+.ProductPageBox {
     display: flex;
     flex-direction: row;
     margin: 10px;
     height: 500px;
 }
 
-.ProductBox > img {
+.ProductPageBox > img {
     width: 50%;
     object-fit: cover;
 }
 
-.ProductBoxInfo {
+.ProductPageBoxInfo {
     flex: 1;
     text-align: left;
     font-size: 0.8em;

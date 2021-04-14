@@ -25,18 +25,57 @@
     ],
     "memory": [
         {
-            "category": "",
+            "category": "Produsent",
             "options": [
-                {"category": "", "name": "", "active": false}
+                {"category": "produsent", "name": "Corsair", "active": false},
+                {"category": "produsent", "name": "HyperX", "active": false},
+                {"category": "produsent", "name": "Kingston", "active": false},
+                {"category": "produsent", "name": "G.SKILL", "active": false}
+            ]
+        },
+        {
+            "category": "Frekvens",
+            "options": [
+                {"category": "frekvens", "name": "1600MHz", "active": false},
+                {"category": "frekvens", "name": "2400MHz", "active": false},
+                {"category": "frekvens", "name": "2666MHz", "active": false},
+                {"category": "frekvens", "name": "3200MHz", "active": false}
+            ]
+        },
+        {
+            "category": "Minne",
+            "options": [
+                {"category": "minne", "name": "4GB", "active": false},
+                {"category": "minne", "name": "8GB", "active": false},
+                {"category": "minne", "name": "16GB", "active": false},
+                {"category": "minne", "name": "32GB", "active": false}
             ]
         }
     ],
     "motherboard": [
         {
-            "category": "",
+            "category": "Produsent",
             "options": [
-                {"category": "", "name": "", "active": false}
+                {"category": "produsent", "name": "Asus", "active": false},
+                {"category": "produsent", "name": "Asrock", "active": false},
+                {"category": "produsent", "name": "Gigabyte", "active": false},
+                {"category": "produsent", "name": "MSI", "active": false}
             ]
+        },
+        {
+            "category": "Sokkel",
+            "options": [
+                {"category": "sokkel", "name": "LGA1151", "active": false},
+                {"category": "sokkel", "name": "LGA1200", "active": false},
+                {"category": "sokkel", "name": "LGA2066", "active": false},
+                {"category": "sokkel", "name": "AM4", "active": false}            ]
+        },
+        {
+            "category": "Format",
+            "options": [
+                {"category": "format", "name": "ATX", "active": false},
+                {"category": "format", "name": "Micro-ATX", "active": false},
+                {"category": "format", "name": "Mini-ITX", "active": false}            ]
         }
     ],
     "gpu": [

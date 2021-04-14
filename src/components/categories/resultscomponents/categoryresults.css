@@ -1,0 +1,43 @@
+.CategoryResults {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    align-items: center;
+}
+
+.ProductBox {
+    margin: 0;
+    padding: 15px 20px;
+    display: flex;
+    width: 20.7%;
+    flex-direction: column;
+    height: 250px;
+}
+
+.ProductImage {
+    object-fit: contain;
+    width: 100%;
+    height: 65%;}
+
+.ProductTextBox {
+    text-align: left;
+    height: 25%;
+    overflow: hidden;
+}
+
+.ProductTitle {
+    font-weight: bold;
+}
+
+.ProductPurchaseBox {
+    display: flex;
+    flex: row;
+}
+
+.ProductPrice {
+}
+
+.BuyButton {
+    margin-left: auto;
+    width: 5rem;
+}

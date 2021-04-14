@@ -16,7 +16,9 @@ const ProductFilterProvider = ({ children }) => {
             case "cpu":
                 return Categories.cpu   
             case "gpu":
-                return Categories.gpu     
+                return Categories.gpu    
+            case "motherboard":
+                return Categories.motherboard 
             default:
                 return null
         }
@@ -34,16 +36,31 @@ const ProductFilterProvider = ({ children }) => {
     }
 
     const categoryFilters = () => {
-        return convertToFilterArray(categoryImport())
+        try{ 
+            return convertToFilterArray(categoryImport())
+        } catch {
+            console.log("Filter operation failed")
+        }
     }
 
     useEffect(() => {
-        setFilters(categoryFilters())
+        try{
+            resetFilters()
+        } catch {
+            console.log("Reset filter operation failed")
+        } finally {
+            setFilters(categoryFilters())
+        }
     }, [])
 
     useEffect(() => {
-        resetFilters()
-        setFilters(categoryFilters())
+        try{
+            resetFilters()
+        } catch {
+            console.log("Reset filter operation failed")
+        } finally {
+            setFilters(categoryFilters())
+        }
     }, [productCategory])
 
     useEffect(() => {
@@ -57,7 +74,6 @@ const ProductFilterProvider = ({ children }) => {
                 e.active = !e.active
         })
         setFilters(newArray)
-        console.log(filters)
     }
 
     const resetFilters = () => {
@@ -71,7 +87,7 @@ const ProductFilterProvider = ({ children }) => {
 
     const urlFilterParameterGen = () => {
         let string = `p=${productCategory}`
-        if (filters.length > 0) {
+        if (filters != undefined && filters.length > 0) {
             filters.forEach(filter => {
                 if (filter.active)
                     string += `&${filter.category}=${filter.name}`
@@ -88,7 +104,7 @@ const ProductFilterProvider = ({ children }) => {
     return (
         <Provider value={{
             productCategory, filters, priceRange, urlFilterParameter,
-            setProductCategory, updateValues, toggle
+            setProductCategory, updateValues, toggle, resetFilters
         }}>
             {children}
         </Provider>

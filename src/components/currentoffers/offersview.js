@@ -7,10 +7,10 @@ import useProducts from "../firebase/useProducts";
 
 const Offers = () => {
     // const [games] = useRawgApi("list", "final-fantasy")
-    const [bruker, setBruker] = useProducts("all")
+    const [products] = useProducts("all")
 
     const createOffers = () => {
-        return bruker.map((item, i) => (
+        return products.map((item, i) => (
             <Offer key={uuidv4()}
                 product={item}
             />
