@@ -29,7 +29,7 @@ function App() {
               <Route path="/cart">
                 <CartPage />
               </Route>
-              <Route path="/products/:productCategory/:productId">
+              <Route path="/product/:productId">
                 <ProductPage />
               </Route>
               <Route path="/products/*">

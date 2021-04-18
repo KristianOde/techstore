@@ -3,11 +3,11 @@ import Offer from "../offer/offer"
 import useRawgApi from "../app/hooks/useRawgApi"
 import {v4 as uuidv4} from 'uuid'
 import 'firebase/firestore';
-import useProducts from "../firebase/useProducts";
+import useFirestoreProducts from "../firebase/useFirestoreProducts";
 
 const Offers = () => {
     // const [games] = useRawgApi("list", "final-fantasy")
-    const [products] = useProducts("all")
+    const [products] = useFirestoreProducts("all")
 
     const createOffers = () => {
         return products.map((item, i) => (

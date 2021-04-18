@@ -3,7 +3,7 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 const db = firebase.firestore();
 
-const useProducts = (productID) => {
+const useFirestoreProducts = (productID) => {
   const [produkter, setProdukter] = useState([]);
 
   useEffect(() => {
@@ -16,11 +16,13 @@ const useProducts = (productID) => {
             .onSnapshot((snapshot) => {
               setProdukter(snapshot.docs.map((doc) => doc.data()));
             });
+            
           break;
           case 1: case 2: case 3: case 4: case 5: case 6:// Kategorier (1 = skjermkort, 2 = prosessor etc.)
             unsubscribeSnapshot = db
             .collection("Produkter")
             .where("Kategori", "==", productID)
+            .where("Prosessor", "==", "Nvidia RTX 3070")
             .onSnapshot((snapshot) => {
               setProdukter(snapshot.docs.map((doc) => doc.data()));
             });
@@ -29,6 +31,14 @@ const useProducts = (productID) => {
             unsubscribeSnapshot = db
             .collection("Produkter")
             .where("Tilbud", "!=", 0)
+            .onSnapshot((snapshot) => {
+              setProdukter(snapshot.docs.map((doc) => doc.data()));
+            });
+          break;
+          case "search":
+            unsubscribeSnapshot = db
+            .collection("Produkter")
+            .whereGreaterThanOrEqualTo("Navn", "ASUS GeForce RTX 3070 TUF OC")
             .onSnapshot((snapshot) => {
               setProdukter(snapshot.docs.map((doc) => doc.data()));
             });
@@ -65,4 +75,4 @@ const useProducts = (productID) => {
   return [produkter];
 };
 
-export default useProducts;
+export default useFirestoreProducts;

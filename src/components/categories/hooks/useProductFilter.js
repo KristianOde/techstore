@@ -86,11 +86,11 @@ const ProductFilterProvider = ({ children }) => {
     }
 
     const urlFilterParameterGen = () => {
-        let string = `p=${productCategory}`
+        let string = `${productCategory}`
         if (filters != undefined && filters.length > 0) {
             filters.forEach(filter => {
                 if (filter.active)
-                    string += `&${filter.category}=${filter.name}`
+                    string += `&${filter.name}`
             })
         }
         string += `&price.min=${priceRange[0]}&price.max=${priceRange[1]}`

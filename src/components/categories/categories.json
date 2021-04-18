@@ -124,10 +124,10 @@
         {
             "category": "Klokkehastighet",
             "options": [
-                {"category": "klokkehastighet", "name": "1.5GHz - 1.9GHz", "active": false},
-                {"category": "klokkehastighet", "name": "2.0GHz - 2.9GHz", "active": false},
-                {"category": "klokkehastighet", "name": "3.0GHz - 3.9GHz", "active": false},
-                {"category": "klokkehastighet", "name": "4.0Ghz og over", "active": false}
+                {"category": "klokkehastighet", "name": "1GHz - 2GHz", "active": false},
+                {"category": "klokkehastighet", "name": "2GHz - 3GHz", "active": false},
+                {"category": "klokkehastighet", "name": "3GHz - 4GHz", "active": false},
+                {"category": "klokkehastighet", "name": "4Ghz og over", "active": false}
             ]
         },
         {
