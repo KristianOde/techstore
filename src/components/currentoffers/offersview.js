@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Offer from "../offer/offer"
+import ProductBox from "../product/productbox"
 import useRawgApi from "../app/hooks/useRawgApi"
 import {v4 as uuidv4} from 'uuid'
 import 'firebase/firestore';
@@ -11,7 +12,7 @@ const Offers = () => {
 
     const createOffers = () => {
         return products.map((item, i) => (
-            <Offer key={uuidv4()}
+            <ProductBox key={uuidv4()}
                 product={item}
             />
         ))

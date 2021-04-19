@@ -14,11 +14,9 @@ const CartContextProvider = ({ children }) => {
         if (cartItems.length == 1 && cartItems.length > counter || cartItems.length > counter) {
             setNotificationHelper(true)
             setCounter(cartItems.length)
-            console.log("if " + cartItems.length + "||" + counter)
         }
         else {
             setCounter(cartItems.length)
-            console.log("else " + cartItems.length + "||" + counter)
         }
     }, [cartItems])
 
