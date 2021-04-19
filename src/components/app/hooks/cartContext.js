@@ -7,13 +7,13 @@ const useCartContext = () => useContext(CartContext)
 
 const CartContextProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([])
-    const [counter, setCounter] = useState(0)
+    const [counter, setCounter] = useState(-1)
     const [notificationHelper, setNotificationHelper] = useState(false)
 
     useEffect(() => {
-        if (cartItems.length == 1 || cartItems.length > counter) {
+        if (cartItems.length == 1 && cartItems.length > counter || cartItems.length > counter) {
             setNotificationHelper(true)
-            setCounter(prev => (prev+1))
+            setCounter(cartItems.length)
             console.log("if " + cartItems.length + "||" + counter)
         }
         else {

@@ -12,7 +12,7 @@ const Linklist = () => {
       <HLink to={"/offers"} name="Tilbud" image={puburl + "offers.png"}/>
       <HLink to={"/aboutus"} name="Om oss" image={puburl + "about.png"}/>
       <HLink to={"/profile"} name="Profil" image={puburl + "profile.png"}/>
-      <HLink to={"/cart"} name={`Handlekurv (${cartItems.length})`} image={puburl + "cart.png"}/>
+      <HLink to={"/cart"} name={`Kurv (${cartItems.length})`} image={puburl + "cart.png"}/>
     </ul>
   );
 };
