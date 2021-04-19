@@ -71,3 +71,49 @@
   transform: translateY(-50%);
 }
 
+.Notification {
+  position: fixed;
+  height: 60px;
+  width: 600px;
+  background-color: rgb(221, 221, 221);
+  bottom: 30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  line-height: 60px;
+
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+  font-size: 1.2em;
+  border-radius: 5px;
+}
+
+.Notification > .OKButton {
+  position: absolute;
+  right: 20px;
+  
+
+  color: teal;
+  font-weight: bold;
+  font-size: 1.4em;
+  cursor: pointer;
+}
+
+/** Animations */
+
+@keyframes moveup {
+  from {bottom: -10%}
+  to {bottom: 30px}
+}
+
+@keyframes movedown {
+  from {bottom: 30px}
+  to {bottom: -10%}
+}
+
+.MoveUp {
+  animation: moveup 500ms;
+}
+
+.MoveDown {
+  animation: movedown 500ms;
+}

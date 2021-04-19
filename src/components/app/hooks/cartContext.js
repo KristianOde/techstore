@@ -1,22 +1,40 @@
 import React, { useState, useContext, useEffect, createContext } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 
 const CartContext = createContext()
 
 const useCartContext = () => useContext(CartContext)
 
-const CartContextProvider = ({children}) => {
+const CartContextProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([])
+    const [counter, setCounter] = useState(0)
+    const [notificationHelper, setNotificationHelper] = useState(false)
+
+    useEffect(() => {
+        if (cartItems.length == 1 || cartItems.length > counter) {
+            setNotificationHelper(true)
+            setCounter(prev => (prev+1))
+            console.log("if " + cartItems.length + "||" + counter)
+        }
+        else {
+            setCounter(cartItems.length)
+            console.log("else " + cartItems.length + "||" + counter)
+        }
+    }, [cartItems])
 
     function addItemToCart(item) {
+        const newItem = { ...item }
+        newItem.uniqueId = uuidv4()
         setCartItems(prevItems => [
-            ...prevItems, item
+            ...prevItems, newItem
         ])
     }
 
-    function removeItemFromCart(id) {
-        setCartItems(prevItems => 
-            prevItems.filter(item => item.id !== id))
-    } 
+    function removeItemFromCart(product) {
+        const id = product.uniqueId
+        setCartItems(prevItems =>
+            prevItems.filter(item => item.uniqueId !== id))
+    }
 
     function emptyCart() {
         setCartItems([])
@@ -24,7 +42,12 @@ const CartContextProvider = ({children}) => {
 
     return (
         <CartContext.Provider value={{
-            cartItems, addItemToCart, removeItemFromCart, emptyCart
+            cartItems,
+            addItemToCart,
+            removeItemFromCart,
+            emptyCart,
+            notificationHelper,
+            setNotificationHelper
         }}>
             {children}
         </CartContext.Provider>
@@ -32,4 +55,4 @@ const CartContextProvider = ({children}) => {
 
 }
 
-export {CartContextProvider, CartContext, useCartContext}
+export { CartContextProvider, CartContext, useCartContext }

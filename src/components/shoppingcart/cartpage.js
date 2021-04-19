@@ -8,7 +8,7 @@ const CartPage = () => {
     const {cartItems, emptyCart} = useContext(CartContext)
 
     const cartItemsList = cartItems.map(item => {
-        return <CartItem key={item.id} item={item}/>
+        return <CartItem key={item.uniqueId} item={item}/>
     })
 
     let totalCost = 0

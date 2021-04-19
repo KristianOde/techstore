@@ -11,7 +11,7 @@ const CartItem = ({item}) => {
             </div>
             <div className="cartItemRight">
                 <span className="cartPrice">{item.Pris},-</span>
-                <button onClick={() => removeItemFromCart(item.id)}>X</button>
+                <button onClick={() => removeItemFromCart(item)}>X</button>
             </div>
         </div>
     )

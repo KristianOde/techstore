@@ -15,6 +15,7 @@ import Footer from '../footer/footer'
 import CartPage from '../shoppingcart/cartpage';
 import CategoryPage from '../categories/categorypage';
 import ProductFilterProvider from '../categories/hooks/useProductFilter';
+import Notification from '../common/notification';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
               <Route path="/registrer" element={<Registrer />} />
               <ProtectedRoute isAuth={true} path="/profile" component={ProfilSide} redirectTo='/login' />
             </Routes>
+            <Notification />
             <Footer />
           </div>
         </div>
