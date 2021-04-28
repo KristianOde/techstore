@@ -16,7 +16,7 @@ const ProductFilterProvider = ({ children }) => {
             case "cpu":
                 return Categories.cpu   
             case "gpu":
-                return Categories.gpu    
+                return Categories.gpu
             case "motherboard":
                 return Categories.motherboard 
             default:

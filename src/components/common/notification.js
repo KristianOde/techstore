@@ -24,7 +24,7 @@ const Notification = () => {
         timeout = setTimeout(() => {
             setNotificationHelper(false)
             console.log(notificationHelper)
-        }, 300);
+        }, 150);
     }
 
     let item = null

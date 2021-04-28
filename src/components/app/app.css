@@ -116,11 +116,11 @@
 }
 
 .MoveUp {
-  animation: moveup 500ms;
+  animation: moveup 200ms;
 }
 
 .MoveDown {
-  animation: movedown 500ms;
+  animation: movedown 200ms;
 }
 
 .FadeIn {
