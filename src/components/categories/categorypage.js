@@ -78,10 +78,8 @@ const CategoryPage = () => {
         let needNextPass = true
 
         for (let k = array.length; k > 1 && needNextPass; k--) {
-            console.log("k: " + k)
             needNextPass = false;
             for (let i = array.length-1; i > 0; i--) {
-                console.log("i: " + i)
                 if (array[i].Pris > array[i - 1].Pris) {
                     let temp = array[i]
                     array[i] = array[i - 1]
