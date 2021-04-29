@@ -83,7 +83,8 @@ const useFirestoreCategories = () => {
     };
   }, [urlFilterParameter]);
 
-  return [produkter];
+
+  return [produkter, setProdukter];
 };
 
 export default useFirestoreCategories;

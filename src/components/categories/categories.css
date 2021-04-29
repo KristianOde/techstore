@@ -38,12 +38,30 @@
 .CategoryDisplaySettings {
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
 }
 
-.CategoryDisplaySettings > div:nth-child(1){
+.CategorySortButtons {
     display: flex;
     flex-direction: row;
-    margin-left: auto;
+    align-items: center;
+}
+
+.CategorySortButtons > button {
+    background: none;
+    border: none;
+    font-size: 1.15em;
+    color: rgb(126, 126, 126);
+    cursor: pointer;
+}
+
+.CategorySortButtons > button:disabled {
+    color:rgb(0, 235, 215);
+}
+
+.CategoryDisplaySettings > .CategoryDisplaySettingsButtons {
+    display: flex;
+    flex-direction: row;
     margin-right: 20px;
     align-items: center;
     padding: 10px;

@@ -5,10 +5,9 @@ import ProductBox from '../../product/productbox'
 import useFireImage from '../../firebase/useFireImage'
 import './categoryresults.css'
 
-const CategoryFilterResults = ({isGrid}) => {
+const CategoryFilterResults = ({products, isGrid}) => {
     {/** For testing */}
     const { urlFilterParameter } = useProductFilterContext();
-    const [products] = useFirestoreCategories(urlFilterParameter)
     //var produktNavn = products.map(({ Navn }) => Navn).toString()
     
 

@@ -4,6 +4,7 @@ import CategoryHeader from './categoryheader'
 import CategorySidebar from './categorysidebar'
 import ProductFilterProvider, { useProductFilterContext } from './hooks/useProductFilter'
 import CategoryFilterResults from './resultscomponents/categoryfilterresults'
+import useFirestoreCategories from '../firebase/useFirestoreCategories'
 
 /** eksempel på filter-parametre, fra komplett.no
 prosessorer?
@@ -35,7 +36,67 @@ const CategoryPage = () => {
         filters,
         resetFilters
     } = useProductFilterContext()
+    const [products, setProducts] = useFirestoreCategories(urlFilterParameter)
     const [isGrid, setIsGrid] = useState(true)
+    const [isSortedByDesc, setIsSortedByDesc] = useState(false)
+    const [isSortedByAsc, setIsSortedByAsc] = useState(false)
+
+    const sortResults = () => {
+        if (isSortedByDesc) {
+            setProducts(prev => {
+                let newArray = [...prev]
+                return sortByDesc(newArray)
+            })
+        }
+        else if (isSortedByAsc) {
+            setProducts(prev => {
+                let newArray = [...prev]
+                return sortByAsc(newArray)
+            })
+        }
+    }
+
+    const sortByDesc = (array) => {
+        let needNextPass = true
+
+        for (let k = 1; k < array.length && needNextPass; k++) {
+            needNextPass = false;
+            for (let i = 0; i < array.length - k; i++) {
+                if (array[i].Pris > array[i + 1].Pris) {
+                    let temp = array[i]
+                    array[i] = array[i + 1]
+                    array[i + 1] = temp
+
+                    needNextPass = true
+                }
+            }
+        }
+        return array
+    }
+    
+    const sortByAsc = (array) => {
+        let needNextPass = true
+
+        for (let k = array.length; k > 1 && needNextPass; k--) {
+            console.log("k: " + k)
+            needNextPass = false;
+            for (let i = array.length-1; i > 0; i--) {
+                console.log("i: " + i)
+                if (array[i].Pris > array[i - 1].Pris) {
+                    let temp = array[i]
+                    array[i] = array[i - 1]
+                    array[i - 1] = temp
+
+                    needNextPass = true
+                }
+            }
+        }
+        return array
+    }
+
+    useEffect(() => {
+        sortResults()
+    }, [isSortedByDesc, isSortedByDesc])
 
     return (
             <div>
@@ -49,8 +110,14 @@ const CategoryPage = () => {
                     />
                     <div>
                         {console.log(urlFilterParameter)}
-                        <CategoryDisplaySettings isGrid={isGrid} setIsGrid={setIsGrid}/>
-                        <CategoryFilterResults isGrid={isGrid}/>
+                        <CategoryDisplaySettings 
+                            isGrid={isGrid} setIsGrid={setIsGrid}
+                            isSortedByDesc={isSortedByDesc}
+                            isSortedByAsc={isSortedByAsc}
+                            setIsSortedByDesc={setIsSortedByDesc}
+                            setIsSortedByAsc={setIsSortedByAsc}
+                        />
+                        <CategoryFilterResults isGrid={isGrid} products={products}/>
                     </div>
                 </div>
             </div>
