@@ -1,5 +1,6 @@
 import React from 'react'
-import { BsList, BsGrid3X3Gap } from 'react-icons/bs'
+import { BsGrid3X3Gap } from 'react-icons/bs'
+import { HiViewList } from 'react-icons/hi'
 
 const CategoryDisplaySettings = ({ isGrid, setIsGrid }) => {
     
@@ -23,7 +24,7 @@ const CategoryDisplaySettings = ({ isGrid, setIsGrid }) => {
                     onClick={() => toggleDisplay()}
                     disabled={!isGrid}
                 >
-                    <BsList />
+                    <HiViewList />
                 </button>
             </div>
         </div>
