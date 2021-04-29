@@ -1,8 +1,11 @@
 .CategoryResults {
     display: flex;
+    align-content: flex-start;
     flex-wrap: wrap;
     height: 100%;
 }
+
+/** Regular product link boxes */
 
 .ProductBox {
     margin: 0;
@@ -13,12 +16,12 @@
     height: 250px;
 }
 
-.ProductImage {
+.ProductBox > .ProductImage {
     object-fit: contain;
     width: 100%;
     height: 65%;}
 
-.ProductTextBox {
+.ProductBox > .ProductTextBox {
     text-align: left;
     height: 25%;
     overflow: hidden;
@@ -28,15 +31,43 @@
     font-weight: bold;
 }
 
-.ProductPurchaseBox {
+.ProductBox > .ProductPurchaseBox {
     display: flex;
     flex: row;
 }
 
-.ProductPrice {
-}
-
-.BuyButton {
+.ProductBox > .ProductPurchaseBox > .BuyButton {
     margin-left: auto;
     width: 5rem;
+}
+
+/** List-based product link boxes */
+
+.ProductBoxVertical {
+    margin: 0 auto;
+    width: 90%;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.ProductBoxVertical > .ProductImage {
+    height: 90%;
+    object-fit: contain;
+}
+
+.ProductBoxVertical > .ProductTextBox {
+    text-align: left;
+    overflow: hidden;
+}
+
+.ProductBoxVertical > .ProductPurchaseBox {
+    display: flex;
+    flex: row;
+    margin-left: auto;
+}
+
+.ProductBoxVertical > .ProductPurchaseBox > .ProductPrice {
+    margin-right: 50px;
 }

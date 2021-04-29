@@ -5,7 +5,7 @@ import ProductBox from '../../product/productbox'
 import useFireImage from '../../firebase/useFireImage'
 import './categoryresults.css'
 
-const CategoryFilterResults = () => {
+const CategoryFilterResults = ({isGrid}) => {
     {/** For testing */}
     const { urlFilterParameter } = useProductFilterContext();
     const [products] = useFirestoreCategories(urlFilterParameter)
@@ -22,7 +22,13 @@ const CategoryFilterResults = () => {
             {products.map((product, i,) => {
 
                 return (
-                    <ProductBox key={i} product={product}/>
+                    <ProductBox 
+                        isGrid={isGrid} 
+                        key={i} 
+                        product={product} 
+                        index={i} 
+                        arrayLength={products.length}
+                    />
                     
                 )
             })}

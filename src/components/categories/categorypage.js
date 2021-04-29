@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import CategoryDisplaySettings from './categorydisplaysettings'
 import CategoryHeader from './categoryheader'
 import CategorySidebar from './categorysidebar'
 import ProductFilterProvider, { useProductFilterContext } from './hooks/useProductFilter'
@@ -34,6 +35,7 @@ const CategoryPage = () => {
         filters,
         resetFilters
     } = useProductFilterContext()
+    const [isGrid, setIsGrid] = useState(true)
 
     return (
             <div>
@@ -46,10 +48,9 @@ const CategoryPage = () => {
                         product={product}
                     />
                     <div>
-                        {product}
-                        <br/>
-                        {urlFilterParameter}
-                        <CategoryFilterResults />
+                        {console.log(urlFilterParameter)}
+                        <CategoryDisplaySettings isGrid={isGrid} setIsGrid={setIsGrid}/>
+                        <CategoryFilterResults isGrid={isGrid}/>
                     </div>
                 </div>
             </div>
