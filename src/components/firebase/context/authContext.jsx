@@ -15,25 +15,30 @@ export function AuthProvider ({ children }) {
     const [currentUser, setCurrentUser] = useState()
     const [loading, setLoading] = useState(true)
 
+    // Logger bruker inn med Firebase Authentication
     function loggInnFirebase(epost, passord) {
         return auth.signInWithEmailAndPassword(epost, passord)
     }
 
+    // Registrerer bruker i Firebase Authentication (epost og passord)
     function registrerBrukerFirebase(epost, passord) {
         return auth.createUserWithEmailAndPassword(epost, passord)
     }
 
-    function registrerBrukerFirestore(epost, brukernavn, passord) {
+    // Registrerer bruker i Firestore (epost og brukernavn)
+    function registrerBrukerFirestore(epost, brukernavn) {
         return db.collection("Brukere").doc(epost).set({
             epost: epost,
             brukernavn: brukernavn,
           });  
     }
 
+    // Henter innlogget brukers brukernavn
     function getUserInfo(epost) {
         return db.collection("Brukere").doc(epost).get("brukernavn");  
     }
 
+    // Logger ut
     function loggUt() {
         return auth.signOut();
     }

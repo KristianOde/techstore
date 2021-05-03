@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  React, { useEffect, useState } from "react";
 import firebase from "firebase/app";
 import "firebase/firestore";
 const db = firebase.firestore();
@@ -10,23 +10,15 @@ const useFirestoreProducts = (productID) => {
     let unsubscribeSnapshot;
     const unsubscribeAuth = firebase.auth().onAuthStateChanged(() => {
       switch (productID) {
+        // Viser alle produktene
         case "all":
           unsubscribeSnapshot = db
             .collection("Produkter")
             .onSnapshot((snapshot) => {
               setProdukter(snapshot.docs.map((doc) => doc.data()));
             });
-            
           break;
-          case 1: case 2: case 3: case 4: case 5: case 6:// Kategorier (1 = skjermkort, 2 = prosessor etc.)
-            unsubscribeSnapshot = db
-            .collection("Produkter")
-            .where("Kategori", "==", productID)
-            .where("Prosessor", "==", "Nvidia RTX 3070")
-            .onSnapshot((snapshot) => {
-              setProdukter(snapshot.docs.map((doc) => doc.data()));
-            });
-          break;
+          // Viser alle produktene som er på tilbud
           case "tilbud":
             unsubscribeSnapshot = db
             .collection("Produkter")
@@ -43,6 +35,7 @@ const useFirestoreProducts = (productID) => {
               setProdukter(snapshot.docs.map((doc) => doc.data()));
             });
           break;
+          // Viser ett produkt
           case "ettProdukt":
             unsubscribeSnapshot = db
             .collection("Produkter")
@@ -57,7 +50,6 @@ const useFirestoreProducts = (productID) => {
             .get()
             .then((doc) => {
               if (doc.exists) {
-                //console.log("Document data:", doc.data());
                 setProdukter(doc.data());
               } else {
                 console.log("No such document!");

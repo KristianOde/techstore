@@ -10,11 +10,12 @@ const Registrer = () => {
   const { registrerBrukerFirebase, registrerBrukerFirestore } = useAuth();
   const navigate = useNavigate();
 
+  // registrerer med Firebase Authentication
   async function onSubmit(e) {
     let result = await registrerBrukerFirebase(e.epost, e.passord);
     let result2 = await registrerBrukerFirestore(e.epost, e.brukernavn, e.passord);
     if (result.error && result2.error) {
-      console.log("sadsadsad");
+      console.log(result);
     } else {
       navigate("/profile");
     }

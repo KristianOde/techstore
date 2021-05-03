@@ -14,6 +14,7 @@ const ProfilSide = () => {
 
   useEffect(() => {
     let unsubscribeSnapshot;
+    // Sjekker og henter innlogget bruker
     const unsubscribeAuth = firebase.auth().onAuthStateChanged(() => {
         unsubscribeSnapshot = db
           .collection("Brukere")
@@ -33,6 +34,7 @@ const ProfilSide = () => {
   }
 
   return (
+    // Tabell som inneholder brukerinformasjon
     <div>
       <div className="userControlBoard">
         <div className="userControlBox">

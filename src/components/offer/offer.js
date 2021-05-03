@@ -1,26 +1,13 @@
 import "../../styles/offers.css";
-import { useState, useContext, useEffect } from "react";
+import { useContext} from "react";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../app/hooks/cartContext";
-import { randomNumber } from "../../utils/utils";
-import { v4 as uuidv4 } from "uuid";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/storage";
-import loadingBilde from "../../images/tempload.webp";
 import useFireImage from "../firebase/useFireImage";
 
 const Offer = ({ product }) => {
-  const [offer, setOffer] = useState(40);
-  const [imageUrl, setImageUrl] = useState([]);
-  const [loading, setLoading] = useState(true);
-  /**
-   * !!Testing!!
-   * Deconstructs the object (which is a videogame, for testing purposes)
-   * to better match the names that are to be used
-   */
-
-  let storageRef = firebase.storage().ref();
 
   const { addItemToCart } = useContext(CartContext);
   const navigate = useNavigate();

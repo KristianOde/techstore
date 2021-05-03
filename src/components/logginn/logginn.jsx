@@ -10,16 +10,18 @@ const Logginn = () => {
   const { loggInnFirebase } = useAuth();
   const navigate = useNavigate();
 
+  // Logger inn med Firebase Authentication
   async function onSubmit(e) {
     let result = await loggInnFirebase(e.brukernavn, e.passord);
     if (result.error) {
-      console.log("sadsadsad");
+      console.log(result);
     } else {
       navigate("/profile");
     }
   }
 
   return (
+    // Form for brukerinnlogging
     <div className="centerform">
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <h1>Logg inn</h1>
